@@ -1,0 +1,1 @@
+page moved to dashboard/dashboard_admin
