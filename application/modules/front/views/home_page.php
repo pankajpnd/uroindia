@@ -1,38 +1,59 @@
-<!-- Home Slider -->
-        <div class="home-slider owl-theme owl-carousel">
-            <div class="slider-item slider-item-img">
+
+     <!-- Home Slider -->
+        <div class="home-slider home-slider-two owl-theme owl-carousel">
+		<div class="slider-item slider-item-img-three">
                 <div class="d-table">
                     <div class="d-table-cell">
                         <div class="container">
                             <div class="slider-text">
                                 <div class="slider-shape">
-                                    <img src="<?php bs() ?>assets/img/home-one/home-slider/1.png" alt="Shape">
+                                    <img src="<?php bs() ?>assets/img/home-one/5.png" alt="Shape">
+                                </div>
+                                <h1>Stay at Home & Get Consultation Online</h1>
+                                <h2>#COVID-19</h2>
+                                <p>Coronavirus Disease (COVID-19) : Origin, Symptoms, Transmission, Treatment And Precautions</p>
+                                <div class="common-btn">
+                                    <a href="appointment.html">Consult Online</a>
+                                    <a class="cmn-btn-right" href="about.html">Get Registered</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-item slider-item-img-two">
+                <div class="d-table">
+                    <div class="d-table-cell">
+                        <div class="container">
+                            <div class="slider-text">
+                                <div class="slider-shape">
+                                    <img src="<?php bs() ?>assets/img/home-one/5.png" alt="Shape">
                                 </div>
                                 <h1>GET EXPERT UROLOGIST OPINION</h1>
-                                
                                 <div class="common-btn">
                                     <a class="cmn-btn-right" href="#" style="padding: 0px 22px;">INFERTILITY</a>
-                                    <a class="cmn-btn-right" href="#" style="padding: 0px 22px;">SEXUAL PROBLEM</a>
+                                    <a class="cmn-btn-right" href="#" style="padding: 0px 22px;">SEXUAL WELLNESS</a>
                                 </div>
 								</br>
                                 <div class="common-btn">
                                     <a class="cmn-btn-right" href="#" style="padding: 0px 22px;">CONSULT ONLINE</a>
                                     <a class="cmn-btn-right" href="#" style="padding: 0px 22px;">SAMPLE REPORT </a>
                                 </div>
+                              
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--<div class="slider-item slider-item-img">
+            <div class="slider-item slider-item-img-three">
                 <div class="d-table">
                     <div class="d-table-cell">
                         <div class="container">
                             <div class="slider-text">
-                                <div class="slider-shape-two">
-                                    <img src="<?php bs() ?>assets/img/home-one/home-slider/2.png" alt="Shape">
+                                <div class="slider-shape">
+                                    <img src="<?php bs() ?>assets/img/home-one/5.png" alt="Shape">
                                 </div>
-                                <h1>Caring Health is Important Than All</h1>
+                                <h1>We Always Provide Best Services</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
                                 <div class="common-btn">
                                     <a href="appointment.html">Get Appointment</a>
@@ -43,15 +64,15 @@
                     </div>
                 </div>
             </div>
-            <div class="slider-item slider-item-img">
+            <div class="slider-item slider-item-img-four">
                 <div class="d-table">
                     <div class="d-table-cell">
                         <div class="container">
                             <div class="slider-text">
-                                <div class="slider-shape-three">
-                                    <img src="<?php bs() ?>assets/img/home-one/home-slider/3.png" alt="Shape">
+                                <div class="slider-shape">
+                                    <img src="<?php bs() ?>assets/img/home-one/5.png" alt="Shape">
                                 </div>
-                                <h1>We Offer Highly Treatments</h1>
+                                <h1>Hign Quality Medicines at Lowest Rates</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
                                 <div class="common-btn">
                                     <a href="appointment.html">Get Appointment</a>
@@ -61,174 +82,309 @@
                         </div>
                     </div>
                 </div>
-            </div>-->
+            </div>
         </div>
         <!-- End Home Slider -->
 
-   
-
-        <!-- About -->
-        <div class="about-area pt-100 pb-70">
+        <!-- Emergency -->
+        <div class="emergency-area">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="about-item">
-                            <div class="about-left">
-                                <img src="<?php bs() ?>assets/img/home-one/4.jpg" alt="About">
+                <div class="row emergency-bg">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="emergency-item">
+                            <i class="icofont-doctor"></i>
+                            <div class="emergency-inner">
+                                <h3>Verified Doctors</h3>
+                                <p>All Doctors go through a stringent verification process</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="about-item about-right">
-                            <img src="<?php bs() ?>assets/img/home-one/5.png" alt="About">
-                            <h2>About Uroindia</h2>
-                            <p>Uroindia.com is one of the first and unique platform which is dedicated only for Urological consultation. People can get instant access to team of best and experienced Urologist all across the country to get the best opinion for their disease. </p>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="emergency-item">
+                            <i class="icofont-lock"></i>
+                            <div class="emergency-inner">
+                                <h3>Privacy Protection</h3>
+                                <p>We assure your privacy and data confidentiality</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
+                        <div class="emergency-item">
+                            <i class="icofont-clock-time"></i>
+                            <div class="emergency-inner">
+                                <h3>Quick Responses</h3>
+                                <p>You will receive responses to your queries within 12 hours.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Emergency -->
+
+        <!-- Welcome -->
+        <section class="welcome-area ptb-100">
+            <div class="container-fluid p-0">
+                <div class="row m-0">
+                    <div class="col-lg-6 p-0">
+                        <div class="welcome-item welcome-left">
+                            <img src="<?php bs() ?>assets/img/home-two/3.jpg" alt="image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-0">
+                        <div class="welcome-item welcome-right">
+                            <div class="section-title-two">
+                                <span>About Us</span>
+                                <h2>Welcome to Mediserv Hospital. We have...</h2>
+                            </div>
                             <ul>
-                                <li>
-                                    <i class="icofont-check-circled"></i>
-                                    Register
+                                <li class="wow fadeInUp" data-wow-delay=".3s">
+                                    <i class="icofont-doctor-alt"></i>
+                                    <div class="welcome-inner">
+                                        <h3>Certified Doctors</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.</p>
+                                    </div>
                                 </li>
-                                <li>
-                                    <i class="icofont-check-circled"></i>
-                                    Choose Service
+                                <li class="wow fadeInUp" data-wow-delay=".5s">
+                                    <i class="icofont-stretcher"></i>
+                                    <div class="welcome-inner">
+                                        <h3>Emergency 24 hours</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.</p>
+                                    </div>
                                 </li>
-                                <li>
-                                    <i class="icofont-check-circled"></i>
-                                    Get Consultations
+                                <li class="wow fadeInUp" data-wow-delay=".7s">
+                                    <i class="icofont-network"></i>
+                                    <div class="welcome-inner">
+                                        <h3>Modern Technologey</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.</p>
+                                    </div>
                                 </li>
                             </ul>
-                            <a href="about.html">Know More</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- End About -->
+        </section>
+        <!-- End Welcome -->
+
+        <!-- Speciality -->
+        <section class="speciality-area pb-100">
+            <div class="container-fluid p-0">
+                <div class="row m-0">
+                    <div class="col-lg-7">
+                        <div class="speciality-left">
+                            <div class="section-title-two">
+                                <span>Speciality</span>
+                                <h2>Our Expertise</h2>
+                            </div>
+                            <div class="speciality-item">
+                                <div class="row m-0">
+                                    <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+                                        <div class="speciality-inner">
+                                            <i class="icofont-check-circled"></i>
+                                            <h3>Child Care</h3>
+                                            <p>Lorem ipsum dolor sit amet, is consectetur adipiscing</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".5s">
+                                        <div class="speciality-inner">
+                                            <i class="icofont-check-circled"></i>
+                                            <h3>More Stuff</h3>
+                                            <p>Lorem ipsum dolor sit amet, is consectetur adipiscing</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+                                        <div class="speciality-inner">
+                                            <i class="icofont-check-circled"></i>
+                                            <h3>Enough Lab</h3>
+                                            <p>Lorem ipsum dolor sit amet, is consectetur adipiscing</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".5s">
+                                        <div class="speciality-inner">
+                                            <i class="icofont-check-circled"></i>
+                                            <h3>24 Hour Doctor</h3>
+                                            <p>Lorem ipsum dolor sit amet, is consectetur adipiscing</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 pr-0">
+                        <div class="speciality-item speciality-right">
+                            <img src="<?php bs() ?>assets/img/home-two/4.jpg" alt="Speciality">
+                            <div class="speciality-emergency">
+                                <div class="speciality-icon">
+                                    <i class="icofont-ui-call"></i>
+                                </div>
+                                <h3>Emergency Call</h3>
+                                <p>+07 554 332 322</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Speciality -->
 
         <!-- Services -->
         <section class="services-area pb-70">
             <div class="container">
-                <div class="section-title">
+                <div class="section-title-two">
+                    <span>Services</span>
                     <h2>Our Hospital Services</h2>
                 </div>
                 <div class="row">
                     <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".3s">
                         <div class="service-item">
-                            <div class="service-front">
-                                <i class="icofont-doctor"></i>
-                                <h3>Expert Doctor</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                            </div>
-                            <div class="service-end">
-                                <i class="icofont-doctor"></i>
-                                <h3>Expert Doctor</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                <a href="service-details.html">Read More</a>
+                            <div class="d-table">
+                                <div class="d-table-cell">
+                                    <div class="service-front">
+                                        <i class="icofont-doctor"></i>
+                                        <h3>Expert Doctor</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                    </div>
+                                    <div class="service-end">
+                                        <i class="icofont-doctor"></i>
+                                        <h3>Expert Doctor</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                        <a href="service-details.html">Read More</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".5s">
                         <div class="service-item">
-                            <div class="service-front">
-                                <i class="icofont-prescription"></i>
-                                <h3>Diagnosis</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                            </div>
-                            <div class="service-end">
-                                <i class="icofont-prescription"></i>
-                                <h3>Diagnosis</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                <a href="service-details.html">Read More</a>
+                            <div class="d-table">
+                                <div class="d-table-cell">
+                                    <div class="service-front">
+                                        <i class="icofont-prescription"></i>
+                                        <h3>Diagnosis</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                    </div>
+                                    <div class="service-end">
+                                        <i class="icofont-prescription"></i>
+                                        <h3>Diagnosis</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                        <a href="service-details.html">Read More</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".7s">
                         <div class="service-item">
-                            <div class="service-front">
-                                <i class="icofont-patient-file"></i>
-                                <h3>Pathology</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                            </div>
-                            <div class="service-end">
-                                <i class="icofont-patient-file"></i>
-                                <h3>Pathology</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                <a href="service-details.html">Read More</a>
+                            <div class="d-table">
+                                <div class="d-table-cell">
+                                    <div class="service-front">
+                                        <i class="icofont-patient-file"></i>
+                                        <h3>Pathology</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                    </div>
+                                    <div class="service-end">
+                                        <i class="icofont-patient-file"></i>
+                                        <h3>Pathology</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                        <a href="service-details.html">Read More</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".9s">
                         <div class="service-item">
-                            <div class="service-front">
-                                <i class="icofont-tooth"></i>
-                                <h3>Dental Care</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                            </div>
-                            <div class="service-end">
-                                <i class="icofont-tooth"></i>
-                                <h3>Dental Care</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                <a href="service-details.html">Read More</a>
+                            <div class="d-table">
+                                <div class="d-table-cell">
+                                    <div class="service-front">
+                                        <i class="icofont-tooth"></i>
+                                        <h3>Dental Care</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                    </div>
+                                    <div class="service-end">
+                                        <i class="icofont-tooth"></i>
+                                        <h3>Dental Care</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                        <a href="service-details.html">Read More</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".3s">
                         <div class="service-item">
-                            <div class="service-front">
-                                <i class="icofont-heart-beat-alt"></i>
-                                <h3>Cardiology</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                            </div>
-                            <div class="service-end">
-                                <i class="icofont-heart-beat-alt"></i>
-                                <h3>Cardiology</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                <a href="service-details.html">Read More</a>
+                            <div class="d-table">
+                                <div class="d-table-cell">
+                                    <div class="service-front">
+                                        <i class="icofont-heart-beat-alt"></i>
+                                        <h3>Cardiology</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                    </div>
+                                    <div class="service-end">
+                                        <i class="icofont-heart-beat-alt"></i>
+                                        <h3>Cardiology</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                        <a href="service-details.html">Read More</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".5s">
                         <div class="service-item">
-                            <div class="service-front">
-                                <i class="icofont-drug"></i>
-                                <h3>Medicine</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                            </div>
-                            <div class="service-end">
-                                <i class="icofont-drug"></i>
-                                <h3>Medicine</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                <a href="service-details.html">Read More</a>
+                            <div class="d-table">
+                                <div class="d-table-cell">
+                                    <div class="service-front">
+                                        <i class="icofont-drug"></i>
+                                        <h3>Medicine</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                    </div>
+                                    <div class="service-end">
+                                        <i class="icofont-drug"></i>
+                                        <h3>Medicine</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                        <a href="service-details.html">Read More</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".7s">
                         <div class="service-item">
-                            <div class="service-front">
-                                <i class="icofont-dna-alt-1"></i>
-                                <h3>Neurology</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                            </div>
-                            <div class="service-end">
-                                <i class="icofont-dna-alt-1"></i>
-                                <h3>Neurology</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                <a href="service-details.html">Read More</a>
+                            <div class="d-table">
+                                <div class="d-table-cell">
+                                    <div class="service-front">
+                                        <i class="icofont-dna-alt-1"></i>
+                                        <h3>Neurology</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                    </div>
+                                    <div class="service-end">
+                                        <i class="icofont-dna-alt-1"></i>
+                                        <h3>Neurology</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                        <a href="service-details.html">Read More</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".9s">
                         <div class="service-item">
-                            <div class="service-front">
-                                <i class="icofont-ambulance-cross"></i>
-                                <h3>Ambulance</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                            </div>
-                            <div class="service-end">
-                                <i class="icofont-ambulance-cross"></i>
-                                <h3>Ambulance</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                <a href="service-details.html">Read More</a>
+                            <div class="d-table">
+                                <div class="d-table-cell">
+                                    <div class="service-front">
+                                        <i class="icofont-ambulance-cross"></i>
+                                        <h3>Ambulance</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                    </div>
+                                    <div class="service-end">
+                                        <i class="icofont-ambulance-cross"></i>
+                                        <h3>Ambulance</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                        <a href="service-details.html">Read More</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -237,69 +393,8 @@
         </section>
         <!-- End Services -->
 
-        <!-- Expertise -->
-        <section class="expertise-area pb-70">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Our Expertise</h2>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="expertise-item">
-                            <div class="row">
-                                <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".3s">
-                                    <a href="blog-details.html">
-                                        <div class="expertise-inner">
-                                            <i class="icofont-doctor-alt"></i>
-                                            <h3>Certified Doctors</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".5s">
-                                    <a href="blog-details.html">
-                                        <div class="expertise-inner">
-                                            <i class="icofont-stretcher"></i>
-                                            <h3>Emergency</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".3s">
-                                    <a href="blog-details.html">
-                                        <div class="expertise-inner">
-                                            <i class="icofont-network"></i>
-                                            <h3>Teachnology</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".5s">
-                                    <a href="blog-details.html">
-                                        <div class="expertise-inner">
-                                            <i class="icofont-ambulance-cross"></i>
-                                            <h3>Ambulance</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="expertise-item">
-                            <div class="expertise-right">
-                                <img src="<?php bs() ?>assets/img/home-one/6.jpg" alt="Expertise">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Expertise -->
-
         <!-- Video -->
-        <div class="video-wrap">
+        <div class="video-wrap video-wrap-two">
             <div class="container-fluid p-0">
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -327,7 +422,7 @@
                                 <div class="d-table-cell">
                                     <div class="container">
                                         <div class="video-item">
-                                            <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="popup-youtube">
+                                            <a href="#">
                                                 <i class="icofont-ui-play"></i>
                                             </a>
                                             <div class="video-content">
@@ -346,7 +441,7 @@
                                 <div class="d-table-cell">
                                     <div class="container">
                                         <div class="video-item">
-                                            <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="popup-youtube">
+                                            <a href="#">
                                                 <i class="icofont-ui-play"></i>
                                             </a>
                                             <div class="video-content">
@@ -365,7 +460,7 @@
                                 <div class="d-table-cell">
                                     <div class="container">
                                         <div class="video-item">
-                                            <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="popup-youtube">
+                                            <a href="#">
                                                 <i class="icofont-ui-play"></i>
                                             </a>
                                             <div class="video-content">
@@ -384,7 +479,7 @@
                                 <div class="d-table-cell">
                                     <div class="container">
                                         <div class="video-item">
-                                            <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="popup-youtube">
+                                            <a href="#">
                                                 <i class="icofont-ui-play"></i>
                                             </a>
                                             <div class="video-content">
@@ -424,10 +519,11 @@
         <!-- End Video -->
 
         <!-- Doctors -->
-        <section class="doctors-area ptb-100">
+        <section class="doctors-area pt-100">
             <div class="container">
-                <div class="section-title">
-                    <h2>Meet Our Doctors</h2>
+                <div class="section-title-two">
+                    <span>Doctors</span>
+                    <h2>Meet Our Doctors </h2>
                 </div>
                 <div class="row">
                     <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
@@ -480,11 +576,121 @@
         </section>
         <!-- End Doctors -->
 
+        <!-- Counter -->
+        <div class="counter-area counter-area-two">
+            <div class="container">
+                <div class="row counter-bg">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="counter-item">
+                            <i class="icofont-patient-bed"></i>
+                            <h3 class="counter">850</h3>
+                            <p>Patients Beds</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="counter-item">
+                            <i class="icofont-people"></i>
+                            <h3><span class="counter">25000</span>+</h3>
+                            <p>Happy Patients</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="counter-item">
+                            <i class="icofont-doctor-alt"></i>
+                            <h3 class="counter">750</h3>
+                            <p>Doctors  & Nurse</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="counter-item">
+                            <i class="icofont-badge"></i>
+                            <h3 class="counter">18</h3>
+                            <p>Year Experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Counter -->
+
+        <!-- Appointment -->
+        <section class="appointment-area pb-100">
+            <div class="container-fluid p-0">
+                <div class="appointment-item">
+                    <h2>Book your appointment</h2>
+                    <span>We will confirm your  appointment within 2 hours</span>
+                    <div class="appointment-form">
+                        <form>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <i class="icofont-business-man-alt-1"></i>
+                                        <label>Name</label>
+                                        <input type="text" class="form-control" placeholder="Enter Your Name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <i class="icofont-ui-message"></i>
+                                        <label>Email</label>
+                                        <input type="email" class="form-control" placeholder="Enter Your Email">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <i class="icofont-ui-call"></i>
+                                        <label>Phone</label>
+                                        <input type="text" class="form-control" placeholder="Enter Your Number">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <i class="icofont-hospital"></i>
+                                        <label>Services</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <option>Dental Care</option>
+                                            <option>Neurology</option>
+                                            <option>Cardiology</option>
+                                            <option>Pathology</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <i class="icofont-doctor"></i>
+                                        <label>Doctor</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <option>Choose Your Doctor</option>
+                                            <option>John Smith</option>
+                                            <option>Sarah Taylor</option>
+                                            <option>Stevn King</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <i class="icofont-business-man"></i>
+                                        <label>Age</label>
+                                        <input type="text" class="form-control" placeholder="Your Age">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn appointment-btn">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Appointment -->
+
         <!-- Blog -->
         <section class="blog-area pt-100 pb-70">
             <div class="container">
-                <div class="section-title">
-                    <h2>Our Latest Blogs</h2>
+                <div class="section-title-two">
+                    <span>Blogs</span>
+                    <h2>Our latest blogs</h2>
                 </div>
                 <div class="row">
                     <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">

@@ -98,6 +98,10 @@ img {
   padding-top: 100px;
 }
 
+.pt-50 {
+  padding-top: 50px;
+}
+
 .pb-70 {
   padding-bottom: 70px;
 }
@@ -178,10 +182,10 @@ button:focus {
 /*----- Home Page One -----*/
 /*-- Header Top --*/
 .header-top {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #f2f2f2;
-  background-color: #ffffff;
+  background-color: #dee1ff;
   z-index: 1;
 }
 

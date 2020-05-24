@@ -17,7 +17,7 @@
         <div class="header-top">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-sm-9 col-lg-9">
+                    <div class="col-sm-4 col-lg-4">
                         <div class="header-top-item">
                             <div class="header-top-left">
                                 <ul>
@@ -27,39 +27,56 @@
                                             Call : +91-9893589861
                                         </a>
                                     </li>
-                                    <li>
+                                    <!--<li>
                                         <a href="mailto:hello@medsev.com">
                                             <i class="icofont-ui-message"></i>
                                             drrajeshpatel08@rediffmail.com
                                         </a>
-                                    </li>
+                                    </li>-->
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-3 col-lg-3">
+                    <div class="col-sm-8 col-lg-8">
                         <div class="header-top-item">
                             <div class="header-top-right">
                                 <ul>
-                                    <?php $user = $this->ion_auth->user()->row();
+                                   
+									<li style="cursor:pointer" onclick="window.location.href='<?= base_url('front/DoctorLogin') ?>'">
+                                        <i class="icofont-doctor"></i>
+                                         For Doctor
+                                    </li>
+									<li style="cursor:pointer" onclick="window.location.href='<?= base_url('front/Login') ?>'">
+										<i class="icofont-businessman"></i>
+										Post Job
+									</li>
+									<li style="cursor:pointer" onclick="window.location.href='<?= base_url('front/Register') ?>'">
+                                        <i class="icofont-hand-drag1"></i>
+                                        Search Job
+                                    </li>
+									<li style="cursor:pointer" onclick="window.location.href='<?= base_url('front/Register') ?>'">
+                                        <i class="icofont-search-job"></i>
+                                        Submit Resume
+                                    </li>
+									 <?php $user = $this->ion_auth->user()->row();
 										if(!empty($user)){ ?>
-                                    <li style="cursor:pointer" onclick="">
+                                   <!-- <li style="cursor:pointer" onclick="">
                                         <i class="icofont-user"></i>
                                         <?php 
-											echo ucwords($user->first_name . ' ' . $user->last_name);
+											//echo ucwords($user->first_name . ' ' . $user->last_name);
 										?>
-                                    </li>
-									<li style="cursor:pointer" onclick="window.location.href='<?= base_url('front/Login/logout') ?>'">
+                                    </li>-->
+									<li style="cursor:pointer;color:red" onclick="window.location.href='<?= base_url('front/Login/logout') ?>'">
                                         <i class="icofont-sign-out"></i>
                                          Logout
                                     </li>
                                     <?php 
 									}else{ ?>
-									<li style="cursor:pointer" onclick="window.location.href='<?= base_url('front/Login') ?>'">
+									<li style="cursor:pointer;color:red" onclick="window.location.href='<?= base_url('front/Login') ?>'">
 										<i class="icofont-lock"></i>
 										Login
 									</li>
-									<li style="cursor:pointer" onclick="window.location.href='<?= base_url('front/Register') ?>'">
+									<li style="cursor:pointer;color:red" onclick="window.location.href='<?= base_url('front/Register') ?>'">
                                         <i class="icofont-sign-in"></i>
                                          Register
                                     </li>
