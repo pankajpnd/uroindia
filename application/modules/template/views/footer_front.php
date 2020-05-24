@@ -12,13 +12,11 @@
                                 <ul>
                                     <li>
                                         <i class="icofont-ui-message"></i>
-                                        <a href="mailto:info@medisev.com">info@medisev.com</a>
-                                        <a href="mailto:hello@medisev.com">hello@medisev.com</a>
+                                        <a href="#">drrajeshpatel08@rediffmail.com</a>
                                     </li>
                                     <li>
                                         <i class="icofont-stock-mobile"></i>
-                                        <a href="tel:+07554332322">Call: +07 554 332 322</a>
-                                        <a href="tel:+236256256365">Call: +236 256 256 365</a>
+                                        <a href="tel:+07554332322">Call : +91-9893589861</a>
                                     </li>
                                     <li>
                                         <i class="icofont-location-pin"></i>
@@ -34,22 +32,22 @@
                                 <h3>Quick Links</h3>
                                 <ul>
                                     <li>
-                                        <a href="about.html">About us</a>
+                                        <a href="<?= base_url('front/AboutUs') ?>">About us</a>
                                     </li>
                                     <li>
-                                        <a href="blog.html">Blog</a>
+                                        <a href="#">Our Team</a>
                                     </li>
                                     <li>
-                                        <a href="blog-details.html">Our Expertise</a>
+                                        <a href="#">Search Urologist</a>
                                     </li>
                                     <li>
-                                        <a href="faq.html">Faq</a>
+                                        <a href="#">Submit Resume</a>
                                     </li>
                                     <li>
-                                        <a href="doctor.html">Doctors</a>
+                                        <a href="#">Search Jobs</a>
                                     </li>
                                     <li>
-                                        <a href="contact.html">Contact us</a>
+                                        <a href="#">Contact us</a>
                                     </li>
                                 </ul>
                             </div>
@@ -61,22 +59,19 @@
                                 <h3>Our Services</h3>
                                 <ul>
                                     <li>
-                                        <a href="#">Dental Care</a>
+                                        <a href="#">About Urology</a>
                                     </li>
                                     <li>
-                                        <a href="#">Cardiology</a>
+                                        <a href="#">Men Heath</a>
                                     </li>
                                     <li>
-                                        <a href="#">Hijama Therapy</a>
+                                        <a href="#">Faq</a>
                                     </li>
                                     <li>
-                                        <a href="#">Massage Therapy</a>
+                                        <a href="#">Health Tips</a>
                                     </li>
                                     <li>
-                                        <a href="#">Ambluance Sevices</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Medicine</a>
+                                        <a href="#">Join Us</a>
                                     </li>
                                 </ul>
                             </div>
@@ -112,7 +107,7 @@
         <div class="copyright-area">
             <div class="container">
                 <div class="copyright-item">
-                    <p>Copyright ©2020 Design & Developed by <a href="https://envytheme.com/" target="_blank">EnvyTheme</a></p>
+                    <p>Copyright ©2020 Uroindia </p>
                 </div>
             </div>
         </div>

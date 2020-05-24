@@ -112,7 +112,7 @@
                                     <a href="<?= base_url('front/home') ?>" class="nav-link active">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="about.html" class="nav-link">About Us</a>
+                                    <a href="<?= base_url('front/AboutUs') ?>" class="nav-link">About Us</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">Why Us</a>

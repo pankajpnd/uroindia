@@ -53,11 +53,10 @@
                                 <div class="slider-shape">
                                     <img src="<?php bs() ?>assets/img/home-one/5.png" alt="Shape">
                                 </div>
-                                <h1>We Always Provide Best Services</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                                <h1>Skip the struggle of booking appointments.Consult a doctor at your ease</h1>
                                 <div class="common-btn">
-                                    <a href="appointment.html">Get Appointment</a>
-                                    <a class="cmn-btn-right" href="about.html">Learn More</a>
+                                    <a href="appointment.html">Consult Online</a>
+                                    <a class="cmn-btn-right" href="about.html">Get Registered</a>
                                 </div>
                             </div>
                         </div>
@@ -72,11 +71,10 @@
                                 <div class="slider-shape">
                                     <img src="<?php bs() ?>assets/img/home-one/5.png" alt="Shape">
                                 </div>
-                                <h1>Hign Quality Medicines at Lowest Rates</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                                <h1>The Best Doctor gives the Least Medicine</h1>
                                 <div class="common-btn">
-                                    <a href="appointment.html">Get Appointment</a>
-                                    <a class="cmn-btn-right" href="about.html">Learn More</a>
+                                    <a href="appointment.html">Consult Online</a>
+                                    <a class="cmn-btn-right" href="about.html">Get Registered</a>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +101,7 @@
                         <div class="emergency-item">
                             <i class="icofont-lock"></i>
                             <div class="emergency-inner">
-                                <h3>Privacy Protection</h3>
+                                <h3>Private & Secure</h3>
                                 <p>We assure your privacy and data confidentiality</p>
                             </div>
                         </div>
@@ -135,20 +133,20 @@
                         <div class="welcome-item welcome-right">
                             <div class="section-title-two">
                                 <span>About Us</span>
-                                <h2>Welcome to Mediserv Hospital. We have...</h2>
+                                <h2>Welcome to Uroindia. We have...</h2>
                             </div>
                             <ul>
                                 <li class="wow fadeInUp" data-wow-delay=".3s">
                                     <i class="icofont-doctor-alt"></i>
                                     <div class="welcome-inner">
                                         <h3>Certified Doctors</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.</p>
+                                        <p>All Doctors go through a stringent verification process.</p>
                                     </div>
                                 </li>
                                 <li class="wow fadeInUp" data-wow-delay=".5s">
                                     <i class="icofont-stretcher"></i>
                                     <div class="welcome-inner">
-                                        <h3>Emergency 24 hours</h3>
+                                        <h3>3 Days Follow up</h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.consectetur adipiscing elit.</p>
                                     </div>
                                 </li>
@@ -167,233 +165,67 @@
         </section>
         <!-- End Welcome -->
 
-        <!-- Speciality -->
-        <section class="speciality-area pb-100">
-            <div class="container-fluid p-0">
-                <div class="row m-0">
-                    <div class="col-lg-7">
-                        <div class="speciality-left">
-                            <div class="section-title-two">
-                                <span>Speciality</span>
-                                <h2>Our Expertise</h2>
-                            </div>
-                            <div class="speciality-item">
-                                <div class="row m-0">
-                                    <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".3s">
-                                        <div class="speciality-inner">
-                                            <i class="icofont-check-circled"></i>
-                                            <h3>Child Care</h3>
-                                            <p>Lorem ipsum dolor sit amet, is consectetur adipiscing</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".5s">
-                                        <div class="speciality-inner">
-                                            <i class="icofont-check-circled"></i>
-                                            <h3>More Stuff</h3>
-                                            <p>Lorem ipsum dolor sit amet, is consectetur adipiscing</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".3s">
-                                        <div class="speciality-inner">
-                                            <i class="icofont-check-circled"></i>
-                                            <h3>Enough Lab</h3>
-                                            <p>Lorem ipsum dolor sit amet, is consectetur adipiscing</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".5s">
-                                        <div class="speciality-inner">
-                                            <i class="icofont-check-circled"></i>
-                                            <h3>24 Hour Doctor</h3>
-                                            <p>Lorem ipsum dolor sit amet, is consectetur adipiscing</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 pr-0">
-                        <div class="speciality-item speciality-right">
-                            <img src="<?php bs() ?>assets/img/home-two/4.jpg" alt="Speciality">
-                            <div class="speciality-emergency">
-                                <div class="speciality-icon">
-                                    <i class="icofont-ui-call"></i>
-                                </div>
-                                <h3>Emergency Call</h3>
-                                <p>+07 554 332 322</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Speciality -->
-
-        <!-- Services -->
-        <section class="services-area pb-70">
+        
+		
+        <!-- Doctors -->
+        <section class="doctors-area pb-50">
             <div class="container">
                 <div class="section-title-two">
-                    <span>Services</span>
-                    <h2>Our Hospital Services</h2>
+                    <span>Doctors</span>
+                    <h2>Meet Our Doctors </h2>
                 </div>
                 <div class="row">
-                    <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".3s">
-                        <div class="service-item">
-                            <div class="d-table">
-                                <div class="d-table-cell">
-                                    <div class="service-front">
-                                        <i class="icofont-doctor"></i>
-                                        <h3>Expert Doctor</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                    </div>
-                                    <div class="service-end">
-                                        <i class="icofont-doctor"></i>
-                                        <h3>Expert Doctor</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                        <a href="service-details.html">Read More</a>
-                                    </div>
-                                </div>
+                    <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
+                        <div class="doctor-item">
+                            <div class="doctor-top">
+                                <img src="<?php bs() ?>assets/img/home-one/doctor/1.jpg" alt="Doctor">
+                                <a href="appointment.html">Get Appointment</a>
+                            </div>
+                            <div class="doctor-bottom">
+                                <h3>
+                                    <a href="doctor-details.html">Dr. Babatunde</a>
+                                </h3>
+                                <span>Neurosurgeon</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".5s">
-                        <div class="service-item">
-                            <div class="d-table">
-                                <div class="d-table-cell">
-                                    <div class="service-front">
-                                        <i class="icofont-prescription"></i>
-                                        <h3>Diagnosis</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                    </div>
-                                    <div class="service-end">
-                                        <i class="icofont-prescription"></i>
-                                        <h3>Diagnosis</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                        <a href="service-details.html">Read More</a>
-                                    </div>
-                                </div>
+                    <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".5s">
+                        <div class="doctor-item">
+                            <div class="doctor-top">
+                                <img src="<?php bs() ?>assets/img/home-one/doctor/2.jpg" alt="Doctor">
+                                <a href="appointment.html">Get Appointment</a>
+                            </div>
+                            <div class="doctor-bottom">
+                                <h3>
+                                    <a href="doctor-details.html">Dr. Addision Smith</a>
+                                </h3>
+                                <span>Neurosurgeon</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".7s">
-                        <div class="service-item">
-                            <div class="d-table">
-                                <div class="d-table-cell">
-                                    <div class="service-front">
-                                        <i class="icofont-patient-file"></i>
-                                        <h3>Pathology</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                    </div>
-                                    <div class="service-end">
-                                        <i class="icofont-patient-file"></i>
-                                        <h3>Pathology</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                        <a href="service-details.html">Read More</a>
-                                    </div>
-                                </div>
+                    <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4 wow fadeInUp" data-wow-delay=".7s">
+                        <div class="doctor-item">
+                            <div class="doctor-top">
+                                <img src="<?php bs() ?>assets/img/home-one/doctor/3.jpg" alt="Doctor">
+                                <a href="appointment.html">Get Appointment</a>
+                            </div>
+                            <div class="doctor-bottom">
+                                <h3>
+                                    <a href="doctor-details.html">Dr. Sarah Tylor</a>
+                                </h3>
+                                <span>Dental Surgeon</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".9s">
-                        <div class="service-item">
-                            <div class="d-table">
-                                <div class="d-table-cell">
-                                    <div class="service-front">
-                                        <i class="icofont-tooth"></i>
-                                        <h3>Dental Care</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                    </div>
-                                    <div class="service-end">
-                                        <i class="icofont-tooth"></i>
-                                        <h3>Dental Care</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                        <a href="service-details.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".3s">
-                        <div class="service-item">
-                            <div class="d-table">
-                                <div class="d-table-cell">
-                                    <div class="service-front">
-                                        <i class="icofont-heart-beat-alt"></i>
-                                        <h3>Cardiology</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                    </div>
-                                    <div class="service-end">
-                                        <i class="icofont-heart-beat-alt"></i>
-                                        <h3>Cardiology</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                        <a href="service-details.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".5s">
-                        <div class="service-item">
-                            <div class="d-table">
-                                <div class="d-table-cell">
-                                    <div class="service-front">
-                                        <i class="icofont-drug"></i>
-                                        <h3>Medicine</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                    </div>
-                                    <div class="service-end">
-                                        <i class="icofont-drug"></i>
-                                        <h3>Medicine</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                        <a href="service-details.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".7s">
-                        <div class="service-item">
-                            <div class="d-table">
-                                <div class="d-table-cell">
-                                    <div class="service-front">
-                                        <i class="icofont-dna-alt-1"></i>
-                                        <h3>Neurology</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                    </div>
-                                    <div class="service-end">
-                                        <i class="icofont-dna-alt-1"></i>
-                                        <h3>Neurology</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                        <a href="service-details.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".9s">
-                        <div class="service-item">
-                            <div class="d-table">
-                                <div class="d-table-cell">
-                                    <div class="service-front">
-                                        <i class="icofont-ambulance-cross"></i>
-                                        <h3>Ambulance</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                    </div>
-                                    <div class="service-end">
-                                        <i class="icofont-ambulance-cross"></i>
-                                        <h3>Ambulance</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                                        <a href="service-details.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                <div class="doctor-btn">
+                    <a href="doctor.html">See All</a>
                 </div>
             </div>
         </section>
-        <!-- End Services -->
+        <!-- End Doctors -->
 
-        <!-- Video -->
+		<!-- Video -->
         <div class="video-wrap video-wrap-two">
             <div class="container-fluid p-0">
                 <div class="tab-content" id="pills-tabContent">
@@ -518,63 +350,85 @@
         </div>
         <!-- End Video -->
 
-        <!-- Doctors -->
-        <section class="doctors-area pt-100">
+		 <!-- Blog -->
+        <section class="blog-area pt-50 " style="background-color: #ffffff;padding-bottom:0px">
             <div class="container">
-                <div class="section-title-two">
-                    <span>Doctors</span>
-                    <h2>Meet Our Doctors </h2>
-                </div>
+                
                 <div class="row">
                     <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
-                        <div class="doctor-item">
-                            <div class="doctor-top">
-                                <img src="<?php bs() ?>assets/img/home-one/doctor/1.jpg" alt="Doctor">
-                                <a href="appointment.html">Get Appointment</a>
+                        <div class="blog-item">
+                            <div class="blog-top">
+                                <a href="blog-details.html">
+                                    <img src="<?php bs() ?>assets/img/home-one/interview.jpg" alt="Blog" height="180px">
+                                </a>
                             </div>
-                            <div class="doctor-bottom">
+                            <div class="blog-bottom">
                                 <h3>
-                                    <a href="doctor-details.html">Dr. Babatunde</a>
+                                    <a href="blog-details.html">Interview</a>
                                 </h3>
-                                <span>Neurosurgeon</span>
+                                <p>Lorem ipsum is  dolor sit amet, csectetur adipiscing elit, dolore smod tempor incididunt ut labore et....</p>
+                                <ul>
+                                    <li>
+                                        <a href="blog-details.html">
+                                            Read More
+                                            <i class="icofont-long-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".5s">
-                        <div class="doctor-item">
-                            <div class="doctor-top">
-                                <img src="<?php bs() ?>assets/img/home-one/doctor/2.jpg" alt="Doctor">
-                                <a href="appointment.html">Get Appointment</a>
+                        <div class="blog-item">
+                            <div class="blog-top">
+                                <a href="blog-details.html">
+                                    <img src="<?php bs() ?>assets/img/home-one/health_tips.jpg" alt="Blog" height="180px">
+                                </a>
                             </div>
-                            <div class="doctor-bottom">
+                            <div class="blog-bottom">
                                 <h3>
-                                    <a href="doctor-details.html">Dr. Addision Smith</a>
+                                    <a href="blog-details.html">Health Tips</a>
                                 </h3>
-                                <span>Neurosurgeon</span>
+                                <p>Lorem ipsum is  dolor sit amet, csectetur adipiscing elit, dolore smod tempor incididunt ut labore et....</p>
+                                <ul>
+                                    <li>
+                                        <a href="blog-details.html">
+                                            Read More
+                                            <i class="icofont-long-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4 wow fadeInUp" data-wow-delay=".7s">
-                        <div class="doctor-item">
-                            <div class="doctor-top">
-                                <img src="<?php bs() ?>assets/img/home-one/doctor/3.jpg" alt="Doctor">
-                                <a href="appointment.html">Get Appointment</a>
+                        <div class="blog-item">
+                            <div class="blog-top">
+                                <a href="blog-details.html">
+                                    <img src="<?php bs() ?>assets/img/home-one/Advertisement.jpg" alt="Blog" height="180px">
+                                </a>
                             </div>
-                            <div class="doctor-bottom">
+                            <div class="blog-bottom">
                                 <h3>
-                                    <a href="doctor-details.html">Dr. Sarah Tylor</a>
+                                    <a href="blog-details.html">Advertisement</a>
                                 </h3>
-                                <span>Dental Surgeon</span>
+                                <p>Lorem ipsum is  dolor sit amet, csectetur adipiscing elit, dolore smod tempor incididunt ut labore et....</p>
+                                <ul>
+                                    <li>
+                                        <a href="blog-details.html">
+                                            Read More
+                                            <i class="icofont-long-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="doctor-btn">
-                    <a href="doctor.html">See All</a>
-                </div>
             </div>
         </section>
-        <!-- End Doctors -->
+        <!-- End Blog -->
+
 
         <!-- Counter -->
         <div class="counter-area counter-area-two">
@@ -685,96 +539,4 @@
         </section>
         <!-- End Appointment -->
 
-        <!-- Blog -->
-        <section class="blog-area pt-100 pb-70">
-            <div class="container">
-                <div class="section-title-two">
-                    <span>Blogs</span>
-                    <h2>Our latest blogs</h2>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
-                        <div class="blog-item">
-                            <div class="blog-top">
-                                <a href="blog-details.html">
-                                    <img src="<?php bs() ?>assets/img/home-one/11.jpg" alt="Blog">
-                                </a>
-                            </div>
-                            <div class="blog-bottom">
-                                <h3>
-                                    <a href="blog-details.html">In this hospital there are special surgeon.</a>
-                                </h3>
-                                <p>Lorem ipsum is  dolor sit amet, csectetur adipiscing elit, dolore smod tempor incididunt ut labore et....</p>
-                                <ul>
-                                    <li>
-                                        <a href="blog-details.html">
-                                            Read More
-                                            <i class="icofont-long-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <i class="icofont-calendar"></i>
-                                        Jan 03, 2020
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".5s">
-                        <div class="blog-item">
-                            <div class="blog-top">
-                                <a href="blog-details.html">
-                                    <img src="<?php bs() ?>assets/img/home-one/12.jpg" alt="Blog">
-                                </a>
-                            </div>
-                            <div class="blog-bottom">
-                                <h3>
-                                    <a href="blog-details.html">World AIDS Day, designated on 1 December.</a>
-                                </h3>
-                                <p>Lorem ipsum is  dolor sit amet, csectetur adipiscing elit, dolore smod tempor incididunt ut labore et....</p>
-                                <ul>
-                                    <li>
-                                        <a href="blog-details.html">
-                                            Read More
-                                            <i class="icofont-long-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <i class="icofont-calendar"></i>
-                                        Jan 03, 2020
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4 wow fadeInUp" data-wow-delay=".7s">
-                        <div class="blog-item">
-                            <div class="blog-top">
-                                <a href="blog-details.html">
-                                    <img src="<?php bs() ?>assets/img/home-one/13.jpg" alt="Blog">
-                                </a>
-                            </div>
-                            <div class="blog-bottom">
-                                <h3>
-                                    <a href="blog-details.html">More than 80 clinical trials launch to test coronavirus.</a>
-                                </h3>
-                                <p>Lorem ipsum is  dolor sit amet, csectetur adipiscing elit, dolore smod tempor incididunt ut labore et....</p>
-                                <ul>
-                                    <li>
-                                        <a href="blog-details.html">
-                                            Read More
-                                            <i class="icofont-long-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <i class="icofont-calendar"></i>
-                                        Jan 03, 2020
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Blog -->
+       
