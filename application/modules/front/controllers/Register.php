@@ -40,6 +40,75 @@ class Register extends MY_Controller
 
 	}
 	
+
+	public function consultant()
+	{
+		
+		$data['page'] = "front/user_registration";
+		$data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+		$this->template->template_front($data);
+			
+
+    }
+    
+    // create a new user
+	public function add_user()
+    {
+        
+        $this->form_validation->set_rules('first_name', 'First name','trim|required');
+        $this->form_validation->set_rules('last_name', 'Last name','trim|required');
+        //$this->form_validation->set_rules('username','Username','trim|required|is_unique[users.username]');
+        $this->form_validation->set_rules('email','Email','trim|valid_email|required|is_unique[users.email]');
+        $this->form_validation->set_rules('phone','Phone No','trim|required|is_unique[users.phone]');
+        $this->form_validation->set_rules('password','Password','trim|min_length[8]|max_length[20]|required');
+        $this->form_validation->set_rules('confirm_password','Confirm password','trim|matches[password]|required');
+        
+        if($this->form_validation->run() === FALSE)
+        {
+            $msg = "Please Fill The Form Correctly <br> Contact Number And E-Mail Must Be unique";
+            $this->session->set_flashdata('message',$msg);
+            header("Location: {$_SERVER["HTTP_REFERER"]}");
+        }
+        else
+        {
+            $first_name = $this->input->post('first_name');
+            $last_name  = $this->input->post('last_name');
+            $username   = $this->input->post('email');
+            $email      = $this->input->post('email');
+            $phone      = $this->input->post('phone');
+            $password   = $this->input->post('password');
+            $gp         = 02;//$this->input->post('group');
+            $age        = $this->input->post('age');
+            $gender     = $this->input->post('gender');
+            $state      = $this->input->post('state');
+            $city       = $this->input->post('city');
+            
+            $group = array($gp);
+ 
+            $additional_data = array(
+                'first_name' => $first_name,
+                'last_name'  => $last_name,
+                'date'       => date('Y-m-d'),  
+                'phone'      => $phone,
+                'age'        => $age,
+                'gender'     => $gender,   
+                'state'      => $state,   
+                'city'       => $city,   
+            );
+
+            if($this->ion_auth->register($username,$password,$email,$additional_data,$group))
+            {
+                $this->session->set_flashdata('message', $this->ion_auth->messages());
+                header("Location: {$_SERVER["HTTP_REFERER"]}");
+            }
+            else
+            {
+                $this->session->set_flashdata('message', $this->ion_auth->errors());
+                header("Location: {$_SERVER["HTTP_REFERER"]}");
+            }
+        }
+    }  
+	
 	// create a new user
 	public function create_user()
     {

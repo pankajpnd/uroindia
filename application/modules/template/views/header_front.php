@@ -44,7 +44,7 @@
                                    
 									<li style="cursor:pointer" onclick="window.location.href='<?= base_url('front/DoctorLogin') ?>'">
                                         <i class="icofont-doctor"></i>
-                                         For Doctor
+                                        For Doctor
                                     </li>
 									<li style="cursor:pointer" onclick="window.location.href='<?= base_url('front/Login') ?>'">
 										<i class="icofont-businessman"></i>
@@ -115,7 +115,7 @@
                                     <a href="<?= base_url('front/AboutUs') ?>" class="nav-link">About Us</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">Why Us</a>
+                                    <a href="<?= base_url('front/WhyUs') ?>" class="nav-link">Why Us</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">Our Team</a>
