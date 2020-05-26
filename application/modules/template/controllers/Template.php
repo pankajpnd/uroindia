@@ -8,11 +8,13 @@ class Template extends MY_Controller
 	{
 		parent::__construct();
 		$this->lang->load('company_profile');
+		$this->load->model(array('Home_Page_model','front/Common_model'));
 		//Do your magic here
 	}
 
 	public function template_front($data = NULL)
 	{
+		$data['top_menus'] = $this->Home_Page_model->all_top_menus();
 		$this->load->view('body_front',$data);
 	}
 

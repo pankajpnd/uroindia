@@ -35,7 +35,7 @@ class Login_setup extends MY_Controller
 		$data['reg_status'] = $this->common_model->select('settings');
 		
 		$data['page'] = "site_config/configuration/login_page_setup";
-      	$this->template->template_view($data);
+      	$this->template->template_backend($data);
 	}
 
 	/*

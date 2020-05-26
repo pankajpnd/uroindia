@@ -296,7 +296,7 @@
         </div>
         <!-- End Video -->
 
-		 <!-- Blog -->
+		<!-- Blog -->
         <section class="blog-area pt-50 " style="background-color: #ffffff;padding-bottom:0px">
             <div class="container">
                 

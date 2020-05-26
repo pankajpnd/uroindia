@@ -106,26 +106,14 @@
                         <a class="navbar-brand" href="#">
                             <img src="<?php bs() ?>assets/img/logo.png" alt="Logo">
                         </a>
+						
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
+							<?php foreach($top_menus as $tmenu){;?>
                                 <li class="nav-item">
-                                    <a href="<?= base_url('front/home') ?>" class="nav-link active">Home</a>
+                                    <a href="<?= base_url().$tmenu->menu_pageurl ?>" class="nav-link active"><?php echo $tmenu->menu_title;?></a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="<?= base_url('front/AboutUs') ?>" class="nav-link">About Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="<?= base_url('front/WhyUs') ?>" class="nav-link">Why Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="<?= base_url('front/OurTeam') ?>" class="nav-link">Our Team</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="<?= base_url('front/SearchUrologist') ?>" class="nav-link">Search Urologist</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="<?= base_url('front/ContactUs') ?>" class="nav-link">Contact Us</a>
-                                </li>
+							<?php } ?>
                             </ul>
                             <div class="nav-srh">
                                 <div class="search-toggle">

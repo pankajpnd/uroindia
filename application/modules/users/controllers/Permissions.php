@@ -58,7 +58,7 @@ class Permissions extends MY_Controller
 			$data['sub_permissions'] = $this->common_model->getAllData('permissions', '*', '', array('level' => 1));
 			
 			$data['page'] = 'users/user_groups/permissions';
-			$this->template->template_view($data);
+			$this->template->template_backend($data);
 		}
 	}
 	public function sub_permission()

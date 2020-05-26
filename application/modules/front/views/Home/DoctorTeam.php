@@ -18,8 +18,8 @@
                                 <h3>
                                     <a href="doctor-details.html"><?php echo $dr->reg_name;?></a>
                                 </h3>
-                                <span><?php echo $dr->reg_degree;?></span>
-                                <span><?php echo $dr->reg_specialty;?></span>
+                                <span><?php echo $this->Common_model->findfield('mst_degree','deg_id',$dr->reg_degree,'deg_name');?></span>
+                                <span><?php echo $this->Common_model->findfield('mst_specialty','spec_id',$dr->reg_specialty,'spec_name');?></span>
                             </div>
                         </div>
                     </div>

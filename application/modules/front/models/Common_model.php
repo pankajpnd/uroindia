@@ -7,6 +7,16 @@
 */
 class Common_model extends CI_Model
 {
+	public function findfield($table, $fieldname1, $fieldvalue1, $returnfield)
+		{
+			$this->db->select($returnfield);
+			$this->db->from($table);
+			$this->db->where($fieldname1, $fieldvalue1);
+			$query = $this->db->get();
+			foreach ($query->result() as $value) {
+			}
+			return @$value->$returnfield;
+		}
 	public function add($table,$data)
 	{
 		$query = $this->db->insert($table,$data);
@@ -57,6 +67,7 @@ class Common_model extends CI_Model
 		$this->db->delete($table);
 		return TRUE;
 	}
+	
 	function getAllData($table,$specific='',$row='',$Where='',$order='',$limit='',$groupBy='',$like = '')
 	{
 		// If Condition

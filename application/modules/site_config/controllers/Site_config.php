@@ -36,7 +36,7 @@ class Site_config extends MY_Controller
       return show_error("You Must Be An Administrator To View This Page");
     }
 		  $data['page'] = "site_config/configuration/site_config";
-      $this->template->template_view($data);
+      $this->template->template_backend($data);
 		// $this->load->view('dashboard', $data);
 	}
 
@@ -151,7 +151,7 @@ class Site_config extends MY_Controller
   public function backup()
   {
       $data['page']="site_config/configuration/backup";
-      $this->template->template_view($data);
+      $this->template->template_backend($data);
       // $this->load->view('dashboard',$data);
   }
 
@@ -249,7 +249,7 @@ class Site_config extends MY_Controller
       else 
       {
         $data['page']="site_config/social_login_config/fb_login";
-        $this->template->template_view($data);
+        $this->template->template_backend($data);
       }
     
    }
@@ -306,7 +306,7 @@ class Site_config extends MY_Controller
       else 
       {
         $data['page']="site_config/social_login_config/twitter_login";
-        $this->template->template_view($data);
+        $this->template->template_backend($data);
       }
     
    }
@@ -362,7 +362,7 @@ class Site_config extends MY_Controller
       else 
       {
         $data['page']="site_config/social_login_config/google_login";
-        $this->template->template_view($data);
+        $this->template->template_backend($data);
       }
     
    }
@@ -417,7 +417,7 @@ class Site_config extends MY_Controller
       else 
       {
         $data['page']="site_config/social_login_config/insta_login";
-        $this->template->template_view($data);
+        $this->template->template_backend($data);
       }
     
    }
@@ -473,7 +473,7 @@ class Site_config extends MY_Controller
       else 
       {
         $data['page']="site_config/social_login_config/linkedin_login";
-        $this->template->template_view($data);
+        $this->template->template_backend($data);
       }
     
    }

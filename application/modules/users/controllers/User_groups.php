@@ -107,7 +107,7 @@ class User_groups extends MY_Controller
 			$data['perm'] = $this->common_model->select('permissions');
 
 			$data['page'] = 'users/user_groups/create_group';
-			$this->template->template_view($data);
+			$this->template->template_backend($data);
 			// $this->_render_page('dashboard', $data);
 		}
 	}
@@ -204,7 +204,7 @@ class User_groups extends MY_Controller
 
 
 		$data['page'] = 'users/user_groups/edit_group';
-		$this->template->template_view($data); 
+		$this->template->template_backend($data); 
 		// $this->_render_page("dashboard", $data);
 	}
 

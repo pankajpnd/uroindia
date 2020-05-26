@@ -79,7 +79,7 @@ class Email extends MY_Controller
 		$data['users'] = $this->ion_auth->users()->result();
 
 		$data['page'] = "users/email/email_members";
-		$this->template->template_view($data);	
+		$this->template->template_backend($data);	
 	}
 
 	/*
