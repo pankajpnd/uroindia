@@ -95,7 +95,7 @@
             <!-- Menu For Mobile Device -->
             <div class="mobile-nav">
                 <a href="index-2.html" class="logo">
-                    <img src="<?php bs() ?>assets/img/logo-two.png" alt="Logo">
+                    <img src="<?php bs() ?>assets/img/logo.png" alt="Logo">
                 </a>
             </div>
 
@@ -118,13 +118,13 @@
                                     <a href="<?= base_url('front/WhyUs') ?>" class="nav-link">Why Us</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">Our Team</a>
+                                    <a href="<?= base_url('front/OurTeam') ?>" class="nav-link">Our Team</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">Search Urologist</a>
+                                    <a href="<?= base_url('front/SearchUrologist') ?>" class="nav-link">Search Urologist</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">Contact Us</a>
+                                    <a href="<?= base_url('front/ContactUs') ?>" class="nav-link">Contact Us</a>
                                 </li>
                             </ul>
                             <div class="nav-srh">

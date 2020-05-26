@@ -120,22 +120,20 @@
         <!-- End Blog Details -->
 
         <!-- Blog -->
-        <section class="blog-area-two">
+        <section class="blog-area pt-50 " style="background-color: #ffffff;padding-bottom:0px">
             <div class="container">
-                <div class="section-title">
-                    <h2>Our Latest Blogs</h2>
-                </div>
+                
                 <div class="row">
                     <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
                         <div class="blog-item">
                             <div class="blog-top">
                                 <a href="blog-details.html">
-                                    <img src="<?php bs() ?>assets/img/home-one/11.jpg" alt="Blog">
+                                    <img src="<?php bs() ?>assets/img/home-one/interview.jpg" alt="Blog" height="180px">
                                 </a>
                             </div>
                             <div class="blog-bottom">
                                 <h3>
-                                    <a href="blog-details.html">In this hospital there are special surgeon.</a>
+                                    <a href="blog-details.html">Interview</a>
                                 </h3>
                                 <p>Lorem ipsum is  dolor sit amet, csectetur adipiscing elit, dolore smod tempor incididunt ut labore et....</p>
                                 <ul>
@@ -144,10 +142,6 @@
                                             Read More
                                             <i class="icofont-long-arrow-right"></i>
                                         </a>
-                                    </li>
-                                    <li>
-                                        <i class="icofont-calendar"></i>
-                                        Jan 03, 2020
                                     </li>
                                 </ul>
                             </div>
@@ -157,12 +151,12 @@
                         <div class="blog-item">
                             <div class="blog-top">
                                 <a href="blog-details.html">
-                                    <img src="<?php bs() ?>assets/img/home-one/12.jpg" alt="Blog">
+                                    <img src="<?php bs() ?>assets/img/home-one/health_tips.jpg" alt="Blog" height="180px">
                                 </a>
                             </div>
                             <div class="blog-bottom">
                                 <h3>
-                                    <a href="blog-details.html">World AIDS Day, designated on 1 December.</a>
+                                    <a href="blog-details.html">Health Tips</a>
                                 </h3>
                                 <p>Lorem ipsum is  dolor sit amet, csectetur adipiscing elit, dolore smod tempor incididunt ut labore et....</p>
                                 <ul>
@@ -171,10 +165,6 @@
                                             Read More
                                             <i class="icofont-long-arrow-right"></i>
                                         </a>
-                                    </li>
-                                    <li>
-                                        <i class="icofont-calendar"></i>
-                                        Jan 03, 2020
                                     </li>
                                 </ul>
                             </div>
@@ -184,12 +174,12 @@
                         <div class="blog-item">
                             <div class="blog-top">
                                 <a href="blog-details.html">
-                                    <img src="<?php bs() ?>assets/img/home-one/13.jpg" alt="Blog">
+                                    <img src="<?php bs() ?>assets/img/home-one/Advertisement.jpg" alt="Blog" height="180px">
                                 </a>
                             </div>
                             <div class="blog-bottom">
                                 <h3>
-                                    <a href="blog-details.html">More than 80 clinical trials launch to test coronavirus.</a>
+                                    <a href="blog-details.html">Advertisement</a>
                                 </h3>
                                 <p>Lorem ipsum is  dolor sit amet, csectetur adipiscing elit, dolore smod tempor incididunt ut labore et....</p>
                                 <ul>
@@ -198,10 +188,6 @@
                                             Read More
                                             <i class="icofont-long-arrow-right"></i>
                                         </a>
-                                    </li>
-                                    <li>
-                                        <i class="icofont-calendar"></i>
-                                        Jan 03, 2020
                                     </li>
                                 </ul>
                             </div>
