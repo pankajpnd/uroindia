@@ -36,7 +36,7 @@
           <li class="nav-label">Main Menu</li>
 			<?php
 			$priviliges = group_priviliges();
-			// print_r($priviliges);
+//			print_r($priviliges);
 			foreach ($priviliges as $head_pre) :
 				if (empty($head_pre->sub)) :
 					?>

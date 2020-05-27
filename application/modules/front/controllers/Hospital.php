@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Register extends MY_Controller 
+class Hospital extends MY_Controller 
 {
 	public function __construct()
 	{
@@ -30,83 +30,63 @@ class Register extends MY_Controller
 	    // endif; 
 	}
 
-	public function index()
-	{
+	public function index(){
 		
-		$data['page'] = "front/register";
-		
+        $data['states'] = $this->common_model->getAllData('mst_state','*');
+        $data['page'] = "front/hospital";
+        
 		$this->template->template_front($data);
 			
 
 	}
-	
-
-	public function consultant()
-	{
-		
-		$data['page'] = "front/user_registration";
-		$data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
-		$this->template->template_front($data);
-			
-
-    }
     
-    // create a new user
-	public function add_user()
-    {
+    
+	public function register_hospital(){        
         
-        $this->form_validation->set_rules('first_name', 'First name','trim|required');
-        $this->form_validation->set_rules('last_name', 'Last name','trim|required');
-        //$this->form_validation->set_rules('username','Username','trim|required|is_unique[users.username]');
-        $this->form_validation->set_rules('email','Email','trim|valid_email|required|is_unique[users.email]');
-        $this->form_validation->set_rules('phone','Phone No','trim|required|is_unique[users.phone]');
-        $this->form_validation->set_rules('password','Password','trim|min_length[8]|max_length[20]|required');
-        $this->form_validation->set_rules('confirm_password','Confirm password','trim|matches[password]|required');
-        
-        if($this->form_validation->run() === FALSE)
-        {
-            $msg = "Please Fill The Form Correctly <br> Contact Number And E-Mail Must Be unique";
-            $this->session->set_flashdata('message',$msg);
-            header("Location: {$_SERVER["HTTP_REFERER"]}");
+        foreach($this->db->list_fields('mst_hospital') as $field){
+            if(!empty($this->input->post($field))){
+                $hospital_data[$field] = $this->input->post($field);
+            }
         }
-        else
-        {
-            $first_name = $this->input->post('first_name');
-            $last_name  = $this->input->post('last_name');
-            $username   = $this->input->post('email');
-            $email      = $this->input->post('email');
-            $phone      = $this->input->post('phone');
-            $password   = $this->input->post('password');
-            $gp         = 02;//$this->input->post('group');
-            $age        = $this->input->post('age');
-            $gender     = $this->input->post('gender');
-            $state      = $this->input->post('state');
-            $city       = $this->input->post('city');
-            
-            $group = array($gp);
- 
-            $additional_data = array(
-                'first_name' => $first_name,
-                'last_name'  => $last_name,
-                'date'       => date('Y-m-d'),  
-                'phone'      => $phone,
-                'age'        => $age,
-                'gender'     => $gender,   
-                'state'      => $state,   
-                'city'       => $city,   
-            );
+            $hospital_data['hosp_entrydt'] = date("Y-m-d H:i:s");
+            $result = $this->common_model->InsertData('mst_hospital',$hospital_data);
 
-            if($this->ion_auth->register($username,$password,$email,$additional_data,$group))
-            {
-                $this->session->set_flashdata('message', $this->ion_auth->messages());
-                header("Location: {$_SERVER["HTTP_REFERER"]}");
-            }
-            else
-            {
-                $this->session->set_flashdata('message', $this->ion_auth->errors());
-                header("Location: {$_SERVER["HTTP_REFERER"]}");
-            }
-        }
+			if($result) 
+	        {
+                $first_name = $this->input->post('hosp_name');
+                $username   = $this->input->post('hosp_hemail');
+                $email      = $this->input->post('hosp_hemail');
+                $phone      = $this->input->post('hosp_hmob');
+                $password   = $this->input->post('password');
+                $gp         = 02;//$this->input->post('group');
+                $state      = $this->input->post('hosp_state');
+                $city       = $this->input->post('hosp_city');
+                
+                $group = array($gp);
+    
+                $additional_data = array(
+                    'first_name' => $first_name,
+                    'last_name'  => '',
+                    'date'       => date('Y-m-d'),  
+                    'phone'      => $phone,   
+                    'state'      => $state,   
+                    'city'       => $city,   
+                );
+
+                if($this->ion_auth->register($username,$password,$email,$additional_data,$group)){
+                    $msg = "Hospital Added Successfully";
+                    $this->session->set_flashdata('success',$msg);
+                    header("Location: {$_SERVER["HTTP_REFERER"]}");
+                }else{
+                    $this->session->set_flashdata('message', $this->ion_auth->errors());
+                    header("Location: {$_SERVER["HTTP_REFERER"]}");
+                }
+	        } else {
+	            $msg = "Error please contact with administrator!";
+	            $this->session->set_flashdata('error',$msg);
+	            header("Location: {$_SERVER["HTTP_REFERER"]}");
+	        }
+            
     }  
 	
 	// create a new user
@@ -218,82 +198,6 @@ class Register extends MY_Controller
             $this->_render_page('auth/create_user', $this->data);
         }
     }
-
-    
-
-	public function med_history()
-	{
-        if (!$this->ion_auth->logged_in()){
-            $uid = $this->session->userdata('user_id');
-            $data['check'] = $this->common_model->getAllData('pt_medhist','*','','mhis_uid=$uid');
-            $data['page'] = "front/pt_history";
-            $this->template->template_front($data);
-        }
-
-    }
-
-    
-	public function doctors(){
-		
-        $data['states'] = $this->common_model->getAllData('mst_state','*');
-        $data['page'] = "front/doctors";
-        
-		$this->template->template_front($data);
-			
-
-    }
-    
-    
-    
-	public function register_doctor(){        
-        
-        foreach($this->db->list_fields('mst_doctor') as $field){
-            if(!empty($this->input->post($field))){
-                $doctor_data[$field] = $this->input->post($field);
-            }
-        }
-            $doctor_data['reg_entrydt'] = date("Y-m-d H:i:s");
-            $result = $this->common_model->InsertData('mst_doctor',$doctor_data);
-
-			if($result) 
-	        {
-                $first_name = $this->input->post('reg_name');
-                $username   = $this->input->post('reg_email');
-                $email      = $this->input->post('reg_email');
-                $phone      = $this->input->post('reg_mob');
-                $password   = $this->input->post('password');
-                $gp         = 02;//$this->input->post('group');
-                $state      = $this->input->post('reg_state');
-                $city       = $this->input->post('reg_city');
-                
-                $group = array($gp);
-    
-                $additional_data = array(
-                    'first_name' => $first_name,
-                    'last_name'  => '',
-                    'date'       => date('Y-m-d'),  
-                    'phone'      => $phone,   
-                    'state'      => $state,   
-                    'city'       => $city,   
-                );
-
-                if($this->ion_auth->register($username,$password,$email,$additional_data,$group)){
-                    $msg = "Doctor Added Successfully";
-                    $this->session->set_flashdata('success',$msg);
-                    header("Location: {$_SERVER["HTTP_REFERER"]}");
-                }else{
-                    $this->session->set_flashdata('message', $this->ion_auth->errors());
-                    header("Location: {$_SERVER["HTTP_REFERER"]}");
-                }
-	        } else {
-	            $msg = "Error please contact with administrator!";
-	            $this->session->set_flashdata('error',$msg);
-	            header("Location: {$_SERVER["HTTP_REFERER"]}");
-	        }
-            
-    }  
-	
-    
 
 }
 
