@@ -42,7 +42,7 @@
                             <div class="header-top-right">
                                 <ul>
                                    
-									<li style="cursor:pointer" onclick="window.location.href='<?= base_url('front/DoctorLogin') ?>'">
+									<li style="cursor:pointer" onclick="window.location.href='<?= base_url('front/Register/doctors') ?>'">
                                         <i class="icofont-doctor"></i>
                                         For Doctor
                                     </li>
@@ -76,7 +76,7 @@
 										<i class="icofont-lock"></i>
 										Login
 									</li>
-									<li style="cursor:pointer;color:red" onclick="window.location.href='<?= base_url('front/Register') ?>'">
+									<li style="cursor:pointer;color:red" onclick="window.location.href='<?= base_url('front/Register/consultant') ?>'">
                                         <i class="icofont-sign-in"></i>
                                          Register
                                     </li>
