@@ -1940,11 +1940,20 @@ class Ion_auth_model extends CI_Model
 	public function set_session($user)
 	{
 		$this->trigger_events('pre_set_session');
+                
+                $groupss = $this->ion_auth->get_users_groups($user->id)->result();
+                foreach ($groupss as $key => $row) {
+                    //print_r($row);
+                    $group = $row->name;
+                    $group_id = $row->id;
+                }
 
 		$session_data = [
 		    'identity'             => $user->{$this->identity_column},
 		    $this->identity_column => $user->{$this->identity_column},
 		    'email'                => $user->email,
+		    'group_id'             => $group_id,
+		    'group'                => $group,
 		    'user_id'              => $user->id, //everyone likes to overwrite id so we'll use user_id
 		    'old_last_login'       => $user->last_login,
 		    'last_check'           => time(),
