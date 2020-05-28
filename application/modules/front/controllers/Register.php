@@ -247,16 +247,59 @@ class Register extends MY_Controller
     
 	public function register_doctor(){        
         
+        $dob_day        =   sprintf("%02d",$this->input->post('reg_dob_day'));
+        $dob_month      =   sprintf("%02d",$this->input->post('reg_dob_month'));
+        $dob_year       =   $this->input->post('reg_dob_year');
         foreach($this->db->list_fields('mst_doctor') as $field){
             if(!empty($this->input->post($field))){
                 $doctor_data[$field] = $this->input->post($field);
             }
         }
+            $doctor_data['reg_dob']     = $dob_year.'-'.$dob_month.'-'.$dob_day;
             $doctor_data['reg_entrydt'] = date("Y-m-d H:i:s");
-            $result = $this->common_model->InsertData('mst_doctor',$doctor_data);
+            
+            
+            $path = './uploads';
+            if (!is_dir($path))
+                mkdir($path);
+            $path = './uploads/DoctorPhotos';
+            if (!is_dir($path))
+                mkdir($path);
 
-			if($result) 
-	        {
+//            $config['upload_path'] = $path . '/';
+//            $config['allowed_types'] = 'gif|jpg|png|tif|bmp|jpeg';
+//            $config['max_size'] = '0';
+//            $config['max_width'] = '0';
+//            $config['max_height'] = '0';
+//
+//            $this->load->library('upload', $config);
+//
+//            if (!is_dir($config['upload_path'])) {
+//                mkdir($config['upload_path'], 0755, TRUE);
+//            }
+//
+//            if (!$this->upload->do_upload('reg_image')) {
+//                $error = array('error' => $this->upload->display_errors());
+//                print_r($error); //display errors
+//            } else {
+//                $upload_data = $this->upload->data();
+//                $data['upload_data'] = $upload_data;
+//
+//                $source_img = $upload_data['full_path']; //Defining the Source Image
+//                $new_img = $upload_data['file_path'] . $upload_data['raw_name'] . '_thumb' . $upload_data['file_ext']; //Defining the Destination/New Image
+//
+//                $data['source_image'] = $new_img;
+//                $doctor_data['reg_image'] = $path . '/' . $upload_data['raw_name'] . '_thumb' . $upload_data['file_ext'];
+//                $this->common_model->create_thumb_gallery($upload_data, $source_img, $new_img, 850, 650); //Creating Thumbnail for Gallery which keeps the original
+//            }
+            if (isset($_FILES["file"]) && !empty($_FILES['file']['name'])) {
+                $fileInfo = pathinfo($_FILES["file"]["name"]);
+                $img_name = time() . '.' . $fileInfo['extension'];
+                move_uploaded_file($_FILES["file"]["tmp_name"], $path."/" . $img_name);
+            }
+            $doctor_data['reg_image'] = $path . '/' .$img_name;
+            $result = $this->common_model->InsertData('mst_doctor',$doctor_data);
+            if($result){
                 $first_name = $this->input->post('reg_name');
                 $username   = $this->input->post('reg_email');
                 $email      = $this->input->post('reg_email');

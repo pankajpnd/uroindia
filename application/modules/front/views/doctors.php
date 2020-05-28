@@ -62,7 +62,7 @@
                                                 <label>&nbsp;</label>
                                                 <select name="reg_dob_year" class="form-control"  required>
                                                     <option value="0" selected>Year</option>
-                                                    <?php for($i=1960;$i<=2020;$i++){ ?>
+                                                    <?php for($i=1960;$i<=date('Y');$i++){ ?>
                                                     <option value="<?php echo $i;?>"><?php echo $i;?></option>
                                                     <?php } ?>
                                                 </select>
@@ -86,7 +86,7 @@
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Designation</label>
-                                                <input type="text" name="designation" class="form-control" placeholder="Designation" required>
+                                                <input type="text" name="reg_desig" class="form-control" placeholder="Designation" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
@@ -123,7 +123,7 @@
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Speciality</label>
-                                                <select name="reg_specialty" class="form-control"  required>
+                                                <select name="reg_specialty" class="form-control"  >
                                                     <option value="">Select Speciality</option>
                                                 </select>
                                             </div>
@@ -139,7 +139,7 @@
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Working</label>
-                                                <select name="reg_workin" class="form-control"  required>
+                                                <select name="reg_workin" class="form-control"  >
                                                     <option value="">Select Working</option>
                                                 </select>
                                             </div>
@@ -212,7 +212,7 @@
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
-                                                <input type="file" name="file" style="border:none;background-color:#e7edf5" class="form-control" >
+                                                <input type="file" name="reg_image" style="border:none;background-color:#e7edf5" class="form-control" >
                                             </div>
                                         </div>             
                                     </div>

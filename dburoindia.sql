@@ -2011,6 +2011,7 @@ CREATE TABLE `mst_doctor` (
   `reg_name` varchar(255) NOT NULL,
   `reg_dob` date NOT NULL,
   `reg_gender` int(11) NOT NULL,
+  `reg_desig` varchar(255) NOT NULL,
   `reg_job` int(11) NOT NULL COMMENT '1 private 2 govt',
   `reg_degree` int(11) NOT NULL,
   `reg_year` int(11) NOT NULL COMMENT 'completion ',
