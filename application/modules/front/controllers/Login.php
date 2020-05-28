@@ -109,12 +109,15 @@ class Login extends MY_Controller
 				else
 				{	
 					$this->session->set_flashdata('message', $this->ion_auth->messages());
-					if ($this->ion_auth->is_admin())
-					{
+                                        $user_type = $this->session->userdata('user_type');
+					if ($this->ion_auth->is_admin()){
 						redirect('dashboard/', 'refresh');
-					}
-					else{
-						redirect('front/home/', 'refresh');
+					}else if($user_type==2){
+                                            redirect('front/home/hospital_profile', 'refresh');
+					}else if($user_type==3){
+                                            redirect('front/home/doctors_profile', 'refresh');
+					}else if($user_type==4){
+                                            redirect('front/register/med_history', 'refresh');
 					}
 					
 				}

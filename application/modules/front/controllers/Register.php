@@ -94,6 +94,7 @@ class Register extends MY_Controller
                 'gender'     => $gender,   
                 'state'      => $state,   
                 'city'       => $city,   
+                'user_type'  => 4,   
             );
 
             if($this->ion_auth->register($username,$password,$email,$additional_data,$group))
@@ -258,6 +259,14 @@ class Register extends MY_Controller
             $doctor_data['reg_dob']     = $dob_year.'-'.$dob_month.'-'.$dob_day;
             $doctor_data['reg_entrydt'] = date("Y-m-d H:i:s");
             
+            $first_name = $this->input->post('reg_name');
+            $username   = $this->input->post('reg_email');
+            $email      = $this->input->post('reg_email');
+            $phone      = $this->input->post('reg_mob');
+            $password   = $this->input->post('password');
+            $gp         = 02;//$this->input->post('group');
+            $state      = $this->input->post('reg_state');
+            $city       = $this->input->post('reg_city');
             
             $path = './uploads';
             if (!is_dir($path))
@@ -266,48 +275,19 @@ class Register extends MY_Controller
             if (!is_dir($path))
                 mkdir($path);
 
-//            $config['upload_path'] = $path . '/';
-//            $config['allowed_types'] = 'gif|jpg|png|tif|bmp|jpeg';
-//            $config['max_size'] = '0';
-//            $config['max_width'] = '0';
-//            $config['max_height'] = '0';
-//
-//            $this->load->library('upload', $config);
-//
-//            if (!is_dir($config['upload_path'])) {
-//                mkdir($config['upload_path'], 0755, TRUE);
-//            }
-//
-//            if (!$this->upload->do_upload('reg_image')) {
-//                $error = array('error' => $this->upload->display_errors());
-//                print_r($error); //display errors
-//            } else {
-//                $upload_data = $this->upload->data();
-//                $data['upload_data'] = $upload_data;
-//
-//                $source_img = $upload_data['full_path']; //Defining the Source Image
-//                $new_img = $upload_data['file_path'] . $upload_data['raw_name'] . '_thumb' . $upload_data['file_ext']; //Defining the Destination/New Image
-//
-//                $data['source_image'] = $new_img;
-//                $doctor_data['reg_image'] = $path . '/' . $upload_data['raw_name'] . '_thumb' . $upload_data['file_ext'];
-//                $this->common_model->create_thumb_gallery($upload_data, $source_img, $new_img, 850, 650); //Creating Thumbnail for Gallery which keeps the original
-//            }
-            if (isset($_FILES["file"]) && !empty($_FILES['file']['name'])) {
-                $fileInfo = pathinfo($_FILES["file"]["name"]);
-                $img_name = time() . '.' . $fileInfo['extension'];
-                move_uploaded_file($_FILES["file"]["tmp_name"], $path."/" . $img_name);
-            }
-            $doctor_data['reg_image'] = $path . '/' .$img_name;
+            $config['upload_path'] = $path;
+            $config['allowed_types'] = 'gif|jpg|png|bmp';
+            $config['width'] = 50;
+            $config['height'] = 50;
+            $config['file_name'] = time() . $first_name;
+            $config['file_overwrite'] = true;
+            $this->load->library('upload', $config);
+            $this->upload->do_upload('reg_image');
+            $data1 = array('upload_data' => $this->upload->data());
+            $error = array('error' => $this->upload->display_errors());
+            $doctor_data['reg_image'] = $path . '/' . $data1['upload_data']['file_name'];
             $result = $this->common_model->InsertData('mst_doctor',$doctor_data);
             if($result){
-                $first_name = $this->input->post('reg_name');
-                $username   = $this->input->post('reg_email');
-                $email      = $this->input->post('reg_email');
-                $phone      = $this->input->post('reg_mob');
-                $password   = $this->input->post('password');
-                $gp         = 02;//$this->input->post('group');
-                $state      = $this->input->post('reg_state');
-                $city       = $this->input->post('reg_city');
                 
                 $group = array($gp);
     
@@ -317,7 +297,8 @@ class Register extends MY_Controller
                     'date'       => date('Y-m-d'),  
                     'phone'      => $phone,   
                     'state'      => $state,   
-                    'city'       => $city,   
+                    'city'       => $city,  
+                    'user_type'  => 3,      
                 );
 
                 if($this->ion_auth->register($username,$password,$email,$additional_data,$group)){

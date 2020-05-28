@@ -11,7 +11,7 @@
                                 </p>
                             </div>
                             <div class="signup-form">
-                                <form action="<?= base_url('front/register/register_doctor') ?>" method="post">
+                                <form action="<?= base_url('front/register/register_doctor') ?>" method="post" enctype="multipart/form-data">
                                     
                                     <div class="row" style="background-color:#e7edf5">
                                         <div class="col-lg-4">

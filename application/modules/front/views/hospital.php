@@ -11,7 +11,7 @@
                                 </p>
                             </div>
                             <div class="signup-form">
-                                <form action="<?= base_url('front/hospital/register_hospital') ?>" method="post">
+                                <form action="<?= base_url('front/hospital/register_hospital') ?>" method="post" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <legend>Basic Detail</legend>

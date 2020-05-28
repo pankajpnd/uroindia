@@ -48,19 +48,36 @@ class Hospital extends MY_Controller
                 $hospital_data[$field] = $this->input->post($field);
             }
         }
-            $hospital_data['hosp_entrydt'] = date("Y-m-d H:i:s");
-            $result = $this->common_model->InsertData('mst_hospital',$hospital_data);
+            $hospital_data['hosp_entrydt'] = date("Y-m-d H:i:s");            
+            $first_name = $this->input->post('hosp_name');
+            $username   = $this->input->post('hosp_hemail');
+            $email      = $this->input->post('hosp_hemail');
+            $phone      = $this->input->post('hosp_hmob');
+            $password   = $this->input->post('password');
+            $gp         = 02;//$this->input->post('group');
+            $state      = $this->input->post('hosp_state');
+            $city       = $this->input->post('hosp_city');
+            
+            $path = './uploads';
+            if (!is_dir($path))
+                mkdir($path);
+            $path = './uploads/HospitalPhotos';
+            if (!is_dir($path))
+                mkdir($path);
 
-			if($result) 
-	        {
-                $first_name = $this->input->post('hosp_name');
-                $username   = $this->input->post('hosp_hemail');
-                $email      = $this->input->post('hosp_hemail');
-                $phone      = $this->input->post('hosp_hmob');
-                $password   = $this->input->post('password');
-                $gp         = 02;//$this->input->post('group');
-                $state      = $this->input->post('hosp_state');
-                $city       = $this->input->post('hosp_city');
+            $config['upload_path'] = $path;
+            $config['allowed_types'] = 'gif|jpg|png|bmp';
+            $config['width'] = 50;
+            $config['height'] = 50;
+            $config['file_name'] = time() . $first_name;
+            $config['file_overwrite'] = true;
+            $this->load->library('upload', $config);
+            $this->upload->do_upload('hosp_image');
+            $data1 = array('upload_data' => $this->upload->data());
+            $error = array('error' => $this->upload->display_errors());
+            $hospital_data['hosp_image'] = $path . '/' . $data1['upload_data']['file_name'];
+            $result = $this->common_model->InsertData('mst_hospital',$hospital_data);
+            if($result) {
                 
                 $group = array($gp);
     
@@ -71,6 +88,7 @@ class Hospital extends MY_Controller
                     'phone'      => $phone,   
                     'state'      => $state,   
                     'city'       => $city,   
+                    'user_type'  => 2,   
                 );
 
                 if($this->ion_auth->register($username,$password,$email,$additional_data,$group)){
