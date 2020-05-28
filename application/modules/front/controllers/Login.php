@@ -103,19 +103,19 @@ class Login extends MY_Controller
 					{
 						$msg = "Email Can not Send";
 						$this->session->set_flashdata('error',$msg);
-						redirect('users/auth/login','refresh');
+						redirect('front/Login','refresh');
 					}
 				} 
 				else
 				{	
 					$this->session->set_flashdata('message', $this->ion_auth->messages());
-					// if ($this->ion_auth->is_admin())
-					// {
+					if ($this->ion_auth->is_admin())
+					{
 						redirect('dashboard/', 'refresh');
-					// }
-					// else{
-						// redirect('front/home/', 'refresh');
-					// }
+					}
+					else{
+						redirect('front/home/', 'refresh');
+					}
 					
 				}
 			}

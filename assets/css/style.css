@@ -89,6 +89,14 @@ img {
   vertical-align: middle;
 }
 
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mr-20 {
+  margin-top: 20px;
+}
+
 .ptb-100 {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -4208,11 +4216,12 @@ footer {
 }
 
 .signup-item .signup-form .form-group {
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .signup-item .signup-form .form-group .form-control {
-  height: 45px;
+  /*height: 45px;*/
   border: 1px solid #4a6f8a;
   padding-left: 20px;
   font-size: 15px;

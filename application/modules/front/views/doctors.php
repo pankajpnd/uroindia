@@ -12,7 +12,8 @@
                             </div>
                             <div class="signup-form">
                                 <form action="<?= base_url('front/register/register_doctor') ?>" method="post">
-                                    <div class="row">
+                                    
+                                    <div class="row" style="background-color:#e7edf5">
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
@@ -20,23 +21,51 @@
                                                 <input type="text" name="reg_name" class="form-control" placeholder="Enter Doctor Name" required>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-1" hidden>
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Registration Type</label>
                                                 <select name="reg_type" class="form-control"  required>
-                                                    <option value="">Select Registration Type</option>
-                                                    <option value="1">Doctor</option>
+                                                    <option value="1" selected>Doctor</option>
                                                     <option value="2">Other</option>
                                                     <option value="3">Uroindia</option>
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-2">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Date of Birth</label>
-                                                <input type="text" name="reg_dob" class="form-control" placeholder="Enter Date of Birth" required>
+                                                <select name="reg_dob_day" class="form-control"  required>
+                                                    <option value="0" selected>Day</option>
+                                                    <?php for($i=1;$i<=31;$i++){?>
+                                                    <option value="<?php echo $i;?>"><?php echo $i;?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="form-group">
+                                                <i class="icofont-ui"></i>
+                                                <label>&nbsp;</label>
+                                                <select name="reg_dob_month" class="form-control"  required>
+                                                    <option value="0" selected>Month</option>
+                                                    <?php for($i=1;$i<=12;$i++){?>
+                                                    <option value="<?php echo $i;?>"><?php echo $i;?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <div class="form-group">
+                                                <i class="icofont-ui"></i>
+                                                <label>&nbsp;</label>
+                                                <select name="reg_dob_year" class="form-control"  required>
+                                                    <option value="0" selected>Year</option>
+                                                    <?php for($i=1960;$i<=2020;$i++){ ?>
+                                                    <option value="<?php echo $i;?>"><?php echo $i;?></option>
+                                                    <?php } ?>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
@@ -50,10 +79,20 @@
                                                 </select>
                                             </div>
                                         </div>
+                                    </div>
+                                    
+                                    <div class="row mt-20" style="background-color:#e7edf5">
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
-                                                <label>Previouse Job</label>
+                                                <label>Designation</label>
+                                                <input type="text" name="designation" class="form-control" placeholder="Designation" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <i class="icofont-ui"></i>
+                                                <label>Category</label>
                                                 <select class="form-control" name="reg_job" id="exampleFormControlSelect1" required>
                                                     <option value="">Choose Previouse Job Type</option>
                                                     <option value="1">Private</option>
@@ -67,6 +106,9 @@
                                                 <label>Degree</label>
                                                 <select name="reg_degree" class="form-control"  required>
                                                     <option value="">Select Degree</option>
+                                                    <option value="MBBS">MBBS</option>
+                                                    <option value="BAMS">BAMS</option>
+                                                    <option value="BDS">BDS</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -93,7 +135,7 @@
                                                 <input type="text" name="reg_regno" class="form-control" placeholder="Enter Registration No." required>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-8">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Working</label>
@@ -102,6 +144,9 @@
                                                 </select>
                                             </div>
                                         </div>
+                                    </div>
+                                    
+                                    <div class="row mt-20" style="background-color:#e7edf5">
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
@@ -122,7 +167,11 @@
                                                     <option value="">Select City</option>
                                                 </select>
                                             </div>
-                                        </div>
+                                        </div>                  
+                                    </div>
+
+
+                                    <div class="row mt-20" style="background-color:#e7edf5">
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
@@ -150,7 +199,25 @@
                                                 <label>Website</label>
                                                 <input type="text" name="reg_webs" class="form-control" placeholder="Enter Website" >
                                             </div>
-                                        </div>                                   
+                                        </div>                    
+                                    </div>
+
+                                    <div class="row mt-20" style="background-color:#e7edf5">
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <i class="icofont-ui"></i>
+                                                <label>Upload Profile Pic (Optional) :</label>
+                                            </div>
+                                        </div>             
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <i class="icofont-ui"></i>
+                                                <input type="file" name="file" style="border:none;background-color:#e7edf5" class="form-control" >
+                                            </div>
+                                        </div>             
+                                    </div>
+
+                                    <div class="row mt-20" style="background-color:#e7edf5">
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
@@ -165,11 +232,23 @@
                                                 <input type="password" name="confirm_password" class="form-control" placeholder="Enter Confirm Password" required>
                                             </div>
                                         </div>
+                                       
+                                        <div class="row">
                                         <div class="col-lg-12">
-                                            <div class="text-center">
-                                                <button type="submit" class="btn signup-btn">Register</button>
+                                            <div class="form-group" style="margin-left:15px">
+                                            <input type="checkbox" /> I agree to the Terms of Use and Privacy Policy.
                                             </div>
                                         </div>
+                                        </div>
+                                        
+                                       
+                                        <div class="col-lg-12">
+                                            <div class="text-center">
+                                                <button type="submit" class="btn signup-btn">Register</button></br>
+                                            </div>
+                                        </div>
+                                        
+
                                     </div>
                                 </form><br><br>
                             </div>
@@ -195,7 +274,7 @@
                                 <h3>Recent Blogs</h3>
                                 <ul>
                                     <li>
-                                        <img src="assets/img/blog/3.jpg" alt="Recent">
+                                        <img src="<?php bs() ?>assets/img/blog/3.jpg" alt="Recent">
                                         <a href="blog-details.html">World AIDS Day, designated on 1 December.</a>
                                         <ul>
                                             <li>
@@ -211,7 +290,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <img src="assets/img/blog/4.jpg" alt="Recent">
+                                        <img src="<?php bs() ?>assets/img/blog/4.jpg" alt="Recent">
                                         <a href="blog-details.html">World AIDS Day, designated on 1 December.</a>
                                         <ul>
                                             <li>
@@ -227,7 +306,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <img src="assets/img/blog/5.jpg" alt="Recent">
+                                        <img src="<?php bs() ?>assets/img/blog/5.jpg" alt="Recent">
                                         <a href="blog-details.html">World AIDS Day, designated on 1 December.</a>
                                         <ul>
                                             <li>

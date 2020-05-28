@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="col-lg-6 pl-0">
                         <div class="signup-left">
-                            <img src="assets/img/signup-bg.jpg" alt="SignUp">
+                            <img src="<?php bs() ?>assets/img/signup-bg.jpg" alt="SignUp">
                         </div>
                     </div>
 
