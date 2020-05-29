@@ -2,7 +2,7 @@
         <div class="signup-area">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-9 ptb-10">
+                    <div class="col-lg-8 ptb-10">
                         <div class="signup-item" style="max-width:90%;">
                             <div class="signup-head">
                                 <h2>Register Hospital</h2>
@@ -11,10 +11,10 @@
                                 </p>
                             </div>
                             <div class="signup-form">
-                                <form action="<?= base_url('front/hospital/register_hospital') ?>" method="post" enctype="multipart/form-data">
-                                    <div class="row">
+                                <form action="<?= base_url('front/hospital/register_hospital') ?>" method="post">
+                                    <div class="row" style="background-color:#e7edf5">
                                         <div class="col-lg-12">
-                                            <legend>Basic Detail</legend>
+                                            <legend>Hospital Detail</legend>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
@@ -37,6 +37,11 @@
                                                 <select name="hosp_type" class="form-control"  required>
                                                     <option value="">Select Hospital Type</option>
                                                     <option value="Government">Government</option>
+                                                    <option value="Medical college">Medical college </option>
+                                                    <option value="Private corporate">Private corporate</option>
+                                                    <option value="Private">Private </option>
+                                                    <option value="Nursing home">Nursing home</option>
+                                                    <option value="Clinic">Clinic</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -44,17 +49,28 @@
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>No of Beds</label>
-                                                <input type="text" name="hosp_beds" class="form-control" placeholder="Enter Bed Count" required>
+                                                <select name="hosp_type" class="form-control"  required>
+                                                    <option value=""> No. of  Beds</option>
+                                                    <option value="Upto 100">Upto 100</option>
+                                                    <option value="100-300">100-300 </option>
+                                                    <option value="more than 300">more than 300</option>
+                                                </select>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
+                                    </div>
+
+                                    <div class="row mt-20" style="background-color:#e7edf5">
+                                        <div class="col-lg-12">
+                                            <legend>FOR OFFICE USE ONLY(THIS INFORMATION WILL NOT BE SHARED PUBLICILY)</legend>
+                                        </div>
+                                        <div class="col-lg-6">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Key Person Name</label>
                                                 <input type="text" name="hosp_autho" class="form-control" placeholder="Enter Key Person Name" required>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-6">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Designation</label>
@@ -64,22 +80,24 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
-                                            <legend>Basic Detail</legend>
-                                        </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-6">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Contact No.</label>
                                                 <input type="text" name="hosp_mbn" class="form-control" placeholder="Enter Contact No" required>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-6">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Email</label>
                                                 <input type="text" name="hosp_email" class="form-control" placeholder="Enter Email" required>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-20" style="background-color:#e7edf5">
+                                        <div class="col-lg-12">
+                                            <legend>HOSPITAL ADDRESS DETAILS</legend>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
@@ -116,9 +134,8 @@
                                                 <textarea name="hosp_addr" class="form-control" placeholder="Enter Hospital Address" required></textarea>
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
-                                            <legend>Basic Detail</legend>
-                                        </div>
+                                    </div>
+                                    <div class="row mt-20" style="background-color:#e7edf5">
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
@@ -153,22 +170,21 @@
                                                 <label>Ambulance No.</label>
                                                 <input type="text" name="hosp_ambu" class="form-control" placeholder="Enter Ambulance Number" required>
                                             </div>
+                                        </div>              
+                                    </div>
+                                    <div class="row mt-20" style="background-color:#e7edf5">
+                                        <div class="col-lg-4">
+                                            <div class="form-group">
+                                                <i class="icofont-ui"></i>
+                                                <label>Hospital Email</label>
+                                                <input type="text" name="hosp_hemail" class="form-control" placeholder="Enter Hospital Email" required>
+                                            </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Hospital Website</label>
                                                 <input type="text" name="hosp_hwebs" class="form-control" placeholder="Enter Hospital Wbsite" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <legend>Basic Detail</legend>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="form-group">
-                                                <i class="icofont-ui"></i>
-                                                <label>Hospital Email</label>
-                                                <input type="text" name="hosp_hemail" class="form-control" placeholder="Enter Hospital Email" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
@@ -184,7 +200,9 @@
                                                 <label>Hospital Image</label>
                                                 <input type="file" name="hosp_image" class="form-control" placeholder="Select Image" required>
                                             </div>
-                                        </div>                                        
+                                        </div>                   
+                                    </div>
+                                    <div class="row mt-20" style="background-color:#e7edf5">
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
@@ -198,18 +216,18 @@
                                                 <label>Confirm Password</label>
                                                 <input type="password" name="confirm_password" class="form-control" placeholder="Enter Confirm Password" required>
                                             </div>
-                                        </div>
+                                        </div> 
                                         <div class="col-lg-12">
                                             <div class="text-center">
-                                                <button type="submit" class="btn signup-btn">Register</button>
+                                                <button type="submit" class="btn signup-btn">Register</button><br>
                                             </div>
-                                        </div>
+                                        </div>                  
                                     </div>
                                 </form><br><br>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
                         <div class="blog-details-item">
                             <div class="blog-details-category ptb-10">
                                 <h3>Register</h3>
@@ -229,7 +247,7 @@
                                 <h3>Recent Blogs</h3>
                                 <ul>
                                     <li>
-                                        <img src="assets/img/blog/3.jpg" alt="Recent">
+                                        <img src="<?php bs() ?>assets/img/blog/3.jpg" alt="Recent">
                                         <a href="blog-details.html">World AIDS Day, designated on 1 December.</a>
                                         <ul>
                                             <li>
@@ -245,7 +263,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <img src="assets/img/blog/4.jpg" alt="Recent">
+                                        <img src="<?php bs() ?>assets/img/blog/4.jpg" alt="Recent">
                                         <a href="blog-details.html">World AIDS Day, designated on 1 December.</a>
                                         <ul>
                                             <li>
@@ -261,7 +279,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <img src="assets/img/blog/5.jpg" alt="Recent">
+                                        <img src="<?php bs() ?>assets/img/blog/5.jpg" alt="Recent">
                                         <a href="blog-details.html">World AIDS Day, designated on 1 December.</a>
                                         <ul>
                                             <li>

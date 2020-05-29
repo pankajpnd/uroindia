@@ -6,7 +6,8 @@ class Doctor_team_model extends CI_Model
 	// get All Doctors
 	public function getDoctorTeam($limit)
 	{
-		$this->db->order_by('reg_id','asc');
+		$this->db->order_by('reg_order','asc');
+		$this->db->where('reg_order > 0');
 		$this->db->limit($limit);
 		$query = $this->db->get('mst_doctor');
 		return $query->result();

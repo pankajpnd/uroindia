@@ -103,7 +103,7 @@
             <div class="main-nav">
                 <div class="container">
                     <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" href="<?= base_url().'front/home'; ?>">
                             <img src="<?php bs() ?>assets/img/logo.png" alt="Logo">
                         </a>
 						

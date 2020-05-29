@@ -7,12 +7,13 @@
                     <h2>Meet Our Doctors </h2>
                 </div>
                 <div class="row">
-					<?php foreach($this->Doctor_team_model->getDoctorTeam(3) as $dr){;?>
-                    <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
+					<?php foreach($this->Doctor_team_model->getDoctorTeam(4) as $dr){;?>
+                    <div class="col-sm-4 col-lg-3 wow fadeInUp" data-wow-delay=".3s">
                         <div class="doctor-item">
                             <div class="doctor-top">
-                                <img src="<?php bs() ?>assets/img/doctor/doctor_blank_2.png" alt="Doctor" height="350px">
-                                <a href="appointment.html">Consult Online</a>
+                                <!--<img src="<?php bs() ?>assets/img/doctor/doctor3.jpg" alt="Doctor" height="280px">-->
+								<img src="<?php echo bs().$dr->reg_image;?>" alt="Doctor" height="280px">
+                               <!-- <a href="appointment.html">Consult Online</a>-->
                             </div>
                             <div class="doctor-bottom">
                                 <h3>
