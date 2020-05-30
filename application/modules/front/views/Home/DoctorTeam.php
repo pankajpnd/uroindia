@@ -11,7 +11,6 @@
                     <div class="col-sm-4 col-lg-3 wow fadeInUp" data-wow-delay=".3s">
                         <div class="doctor-item">
                             <div class="doctor-top">
-                                <!--<img src="<?php bs() ?>assets/img/doctor/doctor3.jpg" alt="Doctor" height="280px">-->
 								<img src="<?php echo bs().$dr->reg_image;?>" alt="Doctor" height="280px">
                                <!-- <a href="appointment.html">Consult Online</a>-->
                             </div>
