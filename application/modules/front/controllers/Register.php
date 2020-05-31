@@ -240,7 +240,7 @@ class Register extends MY_Controller
 	{
         if ($this->ion_auth->logged_in()){
             $uid = $this->session->userdata('user_id');
-            $data['check'] = $this->common_model->getAllData('pt_medhist','*','','mhis_uid='.$uid);
+            $data['check'] = $this->common_model->getAllData('patients_queries','*','','qry_user_id='.$uid);
             $data['page'] = "front/pt_history";
             $this->template->template_front($data);
         }else{

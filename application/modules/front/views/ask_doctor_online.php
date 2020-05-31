@@ -13,7 +13,7 @@
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
-                            <div class="col-md-12 col-lg-12" style="background-color:#e7edf5;">
+                            <div class="col-md-12 col-lg-12" style="background-color:#e7edf5;padding:10px">
                                 <button type="" class="drop-btn" onclick="OpenForm('signUp_form','signIn_form')">New User</button>
                                 <button type="" class="drop-btn" onclick="OpenForm('signIn_form','signUp_form')">Existing User?</button>
                                 <div class="col-md-12 col-lg-12">
@@ -26,6 +26,7 @@
                                                 <div class="row">													   
                                                     <div class="col-lg-6">
                                                         <div class="form-group">
+															<i class="icofont-ui-user"></i>
                                                             <label>Email / Username</label>
                                                             <input type="email" class="form-control" id="identity" name="identity" placeholder="Your Email">
                                                             <textarea name="health_query" class="form-control query_message" hidden></textarea>
@@ -33,6 +34,7 @@
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="form-group">
+															<i class="icofont-ui-password"></i>
                                                             <label>Password</label>
                                                             <input type="password" class="form-control" name="password" placeholder="Password">
                                                         </div>
