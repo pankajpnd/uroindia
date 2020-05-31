@@ -54,7 +54,11 @@ class Register extends MY_Controller
     // create a new user
 	public function add_user()
     {
-        
+        if($_POST['signIn']){ echo "signIn"; }
+        if($_POST['signUp']){ echo "signUn"; }
+            
+            die;
+            
         $this->form_validation->set_rules('first_name', 'First name','trim|required');
         $this->form_validation->set_rules('last_name', 'Last name','trim|required');
         //$this->form_validation->set_rules('username','Username','trim|required|is_unique[users.username]');
@@ -71,17 +75,17 @@ class Register extends MY_Controller
         }
         else
         {
-            $first_name = $this->input->post('first_name');
-            $last_name  = $this->input->post('last_name');
-            $username   = $this->input->post('email');
-            $email      = $this->input->post('email');
-            $phone      = $this->input->post('phone');
-            $password   = $this->input->post('password');
-            $gp         = 02;//$this->input->post('group');
-            $age        = $this->input->post('age');
-            $gender     = $this->input->post('gender');
-            $state      = $this->input->post('state');
-            $city       = $this->input->post('city');
+            $first_name     = $this->input->post('first_name');
+            $last_name      = $this->input->post('last_name');
+            $username       = $this->input->post('email');
+            $email          = $this->input->post('email');
+            $phone          = $this->input->post('phone');
+            $password       = $this->input->post('password');
+            $gp             = 02;//$this->input->post('group');
+            $age            = $this->input->post('age');
+            $gender         = $this->input->post('gender');
+            $state          = $this->input->post('state');
+            $city           = $this->input->post('city');
             
             $group = array($gp);
  
@@ -97,13 +101,23 @@ class Register extends MY_Controller
                 'user_type'  => 4,   
             );
 
-            if($this->ion_auth->register($username,$password,$email,$additional_data,$group))
-            {
-                $this->session->set_flashdata('message', $this->ion_auth->messages());
-                header("Location: {$_SERVER["HTTP_REFERER"]}");
-            }
-            else
-            {
+            if($this->ion_auth->register($username,$password,$email,$additional_data,$group)){
+//                $this->session->set_flashdata('message', $this->ion_auth->messages());
+//                header("Location: {$_SERVER["HTTP_REFERER"]}");
+                if ($this->ion_auth->login($email, $password, 1)){
+//                    $medhist_data['mhis_uid']   = $this->session->userdata('user_id');
+//                    $medhist_data['mhis_query'] = $this->input->post('health_query');
+//                    $medhist_data['mhis_entrydt'] = date("Y-m-d H:i:s");
+//                    $this->common_model->InsertData('pt_medhist',$medhist_data);            
+                    $this->session->set_flashdata('message', $this->ion_auth->messages());
+                    redirect('front/register/med_history', 'refresh');
+                }else{
+                    // if the login was un-successful
+                    // redirect them back to the login page
+                    $this->session->set_flashdata('message', $this->ion_auth->errors());
+                    redirect('front/login', 'refresh'); // use redirects instead of loading views for compatibility with MY_Controller libraries
+                }
+            }else{
                 $this->session->set_flashdata('message', $this->ion_auth->errors());
                 header("Location: {$_SERVER["HTTP_REFERER"]}");
             }
@@ -224,11 +238,13 @@ class Register extends MY_Controller
 
 	public function med_history()
 	{
-        if (!$this->ion_auth->logged_in()){
+        if ($this->ion_auth->logged_in()){
             $uid = $this->session->userdata('user_id');
-            $data['check'] = $this->common_model->getAllData('pt_medhist','*','','mhis_uid=$uid');
+            $data['check'] = $this->common_model->getAllData('pt_medhist','*','','mhis_uid='.$uid);
             $data['page'] = "front/pt_history";
             $this->template->template_front($data);
+        }else{
+            redirect('front/login', 'refresh');
         }
 
     }

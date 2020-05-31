@@ -11,7 +11,7 @@
                                 </p>
                             </div>
                             <div class="signup-form">
-                                <form action="<?= base_url('front/hospital/register_hospital') ?>" method="post">
+                                <form action="<?= base_url('front/hospital/register_hospital') ?>" method="post" enctype="multipart/form-data">
                                     <div class="row" style="background-color:#e7edf5">
                                         <div class="col-lg-12">
                                             <legend>Hospital Detail</legend>
@@ -103,7 +103,7 @@
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>State</label>
-                                                <select name="hosp_state" class="form-control" onchange="GetState(this.value)" required>
+                                                <select name="hosp_state" class="form-control" onchange="GetCity(this.value)" required>
                                                     <option value="">Select State</option>
                                                     <?php foreach($states as $state){ ?>
                                                     <option value="<?php echo $state->state_id; ?>"><?php echo $state->state_name; ?></option>
@@ -308,7 +308,7 @@
           
     });
 
-    function GetState(state_id){
+    function GetCity(state_id){
         $.ajax({
             url:'<?= base_url('front/home/get_city_by_state'); ?>',
             data:{'state_id':state_id},

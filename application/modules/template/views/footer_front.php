@@ -1,5 +1,6 @@
 <!-- Footer -->
-        <footer class="pb-70">
+<div class="clear" style="clear: both;"></div><br><br><br>
+        <footer class="pb-70 ">
 
             
 

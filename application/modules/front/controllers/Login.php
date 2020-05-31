@@ -117,6 +117,12 @@ class Login extends MY_Controller
 					}else if($user_type==3){
                                             redirect('front/home/doctors_profile', 'refresh');
 					}else if($user_type==4){
+                                            if(!empty($this->input->post('health_query'))){
+//                                                $medhist_data['mhis_uid']   = $this->session->userdata('user_id');
+//                                                $medhist_data['mhis_query'] = $this->input->post('health_query');
+//                                                $medhist_data['mhis_entrydt'] = date("Y-m-d H:i:s");
+//                                                $this->common_model->InsertData('pt_medhist',$medhist_data); 
+                                            }
                                             redirect('front/register/med_history', 'refresh');
 					}
 					

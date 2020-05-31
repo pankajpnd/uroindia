@@ -36,9 +36,11 @@ class AskOnline extends MY_Controller
 	 */
 	public function index()
 	{
-		$data['page'] = "front/ask_doctor_online";
-		
-		$this->template->template_front($data);
+            
+            $data['states'] = $this->common_model->getAllData('mst_state','*');
+            $data['page'] = "front/ask_doctor_online";
+
+            $this->template->template_front($data);
 	}
 
 	

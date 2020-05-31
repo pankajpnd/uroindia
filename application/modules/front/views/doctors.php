@@ -151,7 +151,7 @@
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>State</label>
-                                                <select name="reg_state" class="form-control" onchange="GetState(this.value)" required>
+                                                <select name="reg_state" class="form-control" onchange="GetCity(this.value)" required>
                                                     <option value="">Select State</option>
                                                     <?php foreach($states as $state){ ?>
                                                     <option value="<?php echo $state->state_id; ?>"><?php echo $state->state_name; ?></option>
@@ -335,7 +335,7 @@
           
     });
 
-    function GetState(state_id){
+    function GetCity(state_id){
         $.ajax({
             url:'<?= base_url('front/home/get_city_by_state'); ?>',
             data:{'state_id':state_id},
