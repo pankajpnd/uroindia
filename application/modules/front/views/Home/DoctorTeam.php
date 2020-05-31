@@ -27,7 +27,7 @@
                     
                 </div>
                 <div class="doctor-btn">
-                    <a href="doctor.html">See All</a>
+                    <a href="<?php bs("front/OurTeam");?>">See All</a>
                 </div>
             </div>
         </section>

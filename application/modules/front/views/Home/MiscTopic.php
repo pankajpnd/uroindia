@@ -3,7 +3,7 @@
                 
                 <div class="row">
                     <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
-                        <?php foreach($this->MiscTopic->getMiscTopic('Entertainment') as $ms){;?>
+                        <?php foreach($this->MiscTopic->getMiscTopic('interview') as $ms){;?>
                         <div class="blog-item">
                             <div class="blog-top">
                                 <a href="#">
@@ -28,7 +28,7 @@
 					<?php } ?>
                     </div>
                     <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".5s">
-                        <?php foreach($this->MiscTopic->getMiscTopic('News') as $ms){;?>
+                        <?php foreach($this->MiscTopic->getMiscTopic('healthtip') as $ms){;?>
                         <div class="blog-item">
                             <div class="blog-top">
                                 <a href="#">
@@ -53,7 +53,7 @@
 					<?php } ?>
                     </div>
                     <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4 wow fadeInUp" data-wow-delay=".7s">
-                        <?php foreach($this->MiscTopic->getMiscTopic('World') as $ms){;?>
+                        <?php foreach($this->MiscTopic->getMiscTopic('advert') as $ms){;?>
                         <div class="blog-item">
                             <div class="blog-top">
                                 <a href="#">
