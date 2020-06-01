@@ -41,6 +41,59 @@ class DoctorProfile extends MY_Controller
 		$this->template->template_front($data);
 	}
 	
+	public function jobpost()
+	{
+            if ($this->ion_auth->logged_in()){
+		$data['page'] = "front/DoctorProfile/job_post";		
+		$this->template->template_front($data);
+            }else{
+                redirect('front/login', 'refresh');
+            }
+	}
+	
+	public function insert_jobpost()
+	{
+            if ($this->ion_auth->logged_in()){
+                foreach($this->db->list_fields('job_post') as $field){
+                    if(!empty($this->input->post($field))){
+                        $data[$field] = $this->input->post($field);
+                    }
+                }
+                $data['jpst_docid'] = $this->session->userdata('user_id');
+                $data['jpst_entrydt'] = date("Y-m-d H:i:s");
+                $this->common_model->InsertData('job_post',$data);
+                header("Location: {$_SERVER["HTTP_REFERER"]}");
+            }else{
+                redirect('front/login', 'refresh');
+            }
+	}
+	
+	public function surgicalvid()
+	{
+            if ($this->ion_auth->logged_in()){
+		$data['page'] = "front/DoctorProfile/surgical_videos";		
+		$this->template->template_front($data);
+            }else{
+                redirect('front/login', 'refresh');
+            }
+	}
+	
+	public function insert_videos(){
+            if ($this->ion_auth->logged_in()){
+                foreach($this->db->list_fields('doc_servid') as $field){
+                    if(!empty($this->input->post($field))){
+                        $data[$field] = $this->input->post($field);
+                    }
+                }
+                $data['vid_docid'] = $this->session->userdata('user_id');
+                $data['vid_entrydt'] = date("Y-m-d H:i:s");
+                $this->common_model->InsertData('doc_servid',$data);
+                header("Location: {$_SERVER["HTTP_REFERER"]}");
+            }else{
+                redirect('front/login', 'refresh');
+            }
+	}
+	
 	
 }
 
