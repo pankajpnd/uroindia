@@ -13,7 +13,7 @@
                                 <h2>#COVID-19</h2>
                                 <p>Coronavirus Disease (COVID-19) : Origin, Symptoms, Transmission, Treatment And Precautions</p>
                                 <div class="common-btn">
-                                    <a href="<?php bs('front/login')?>">Consult Online</a>
+                                    <a href="<?php bs('front/AskOnline')?>">Consult Online</a>
                                     <a class="cmn-btn-right" href="about.html">Get Registered</a>
                                 </div>
                             </div>
@@ -170,6 +170,11 @@
         <!-- Doctors -->
 		<?php include('Home/DoctorTeam.php');?>
         <!-- End Doctors -->
+
+		
+        <!-- Hospitals -->
+		<?php include('Home/RegHospitals.php');?>
+        <!-- End Hospitals -->
 
 		<!-- Video -->
         <div class="video-wrap video-wrap-two">

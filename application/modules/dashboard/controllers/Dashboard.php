@@ -16,9 +16,9 @@ class Dashboard extends MY_Controller
 		    redirect('users/auth', 'refresh');
 		endif;
 
-		if (!$this->ion_auth->is_admin()): 
-	      return show_error("You Must Be An Administrator To View This Page");
-	    endif; 
+		// if (!$this->ion_auth->is_admin()): 
+	      // return show_error("You Must Be An Administrator To View This Page");
+	    // endif; 
 	}
 
 	/**

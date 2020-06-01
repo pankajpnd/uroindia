@@ -47,7 +47,8 @@ class Hospital extends MY_Controller
             if(!empty($this->input->post($field))){
                 $hospital_data[$field] = $this->input->post($field);
             }
-        }
+			}
+			$hospital_data['hosp_order'] = 1;
             $hospital_data['hosp_entrydt'] = date("Y-m-d H:i:s");            
             $first_name = $this->input->post('hosp_name');
             $username   = $this->input->post('hosp_hemail');

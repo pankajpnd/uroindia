@@ -2,14 +2,14 @@
         <div class="about-area pt-100 pb-70">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-4">
                         <div class="about-item">
                             <div class="about-left">
-                                <img src="<?php bs() ?>assets/img/home-one/4.jpg" alt="About">
+                                <img src="<?php bs() ?>assets/img/doctor/doctor1.jpg" alt="About" height="300px">
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-8">
                         <div class="about-item about-right">
                             <img src="<?php bs() ?>assets/img/home-one/5.png" alt="About">
                             <h2>About Us</h2>
