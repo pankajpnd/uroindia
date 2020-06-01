@@ -1,11 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/*
-Author Salman Iqbal
-Company Parexons
-Date 26/1/2017
-*/
+
 
 class Users_modal extends CI_Model 
 {

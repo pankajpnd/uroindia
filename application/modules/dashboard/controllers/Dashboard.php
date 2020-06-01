@@ -10,7 +10,7 @@ class Dashboard extends MY_Controller
 		 
 	    // $this->load->model('crud_model');  
 	    $this->load->library('form_validation');
-		$this->load->model(array('Users_modal','Users_groups','common_model'));
+		$this->load->model(array('Dashboard_model','Users_modal','Users_groups','common_model'));
 
 		if (!$this->ion_auth->logged_in()):
 		    redirect('users/auth', 'refresh');
@@ -48,6 +48,8 @@ class Dashboard extends MY_Controller
 			$data['today_users'] = $this->Users_modal->recent_users();
 
 			$data['weekly'] = $this->Users_modal->weekly_data();
+			
+			$data['today_queries'] = $this->Dashboard_model->count_todays_queries();
 			
 			$data['page'] = "dashboard/dashboard_admin";
       		

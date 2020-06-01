@@ -27,12 +27,11 @@
                                         Call : +91-9893589861
                                     </a>
                                 </li>
-                                <!--<li>
-                                    <a href="mailto:hello@medsev.com">
-                                        <i class="icofont-ui-message"></i>
-                                        drrajeshpatel08@rediffmail.com
-                                    </a>
-                                </li>-->
+                                <li>
+									<a href="<?php bs('front/AskOnline')?>">
+										<button style="border-radius: 30px; background-color: #0046c0;color:#fff;border:none;">Consult Online</button>
+									</a>
+								</li>
                             </ul>
                         </div>
                     </div>
@@ -64,12 +63,12 @@
                                 
                                     <li class="dropdown">
                                         <a style="cursor:pointer;color:#d44326;" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Welcome! <b><i class="icofont-user"></i> <?php echo ucwords($user->first_name . ' ' . $user->last_name); ?></b>
+                                            Welcome! &nbsp;<b><?php echo ucwords($user->first_name . ' ' . $user->last_name); ?></b>
                                         </a>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <li class="dropdown-item" href="#">Profile</li>
-                                            <li class="dropdown-item" href="#">Change Password</li>
-                                            <li class="dropdown-item" href="#" onclick="window.location.href = '<?= base_url('front/Login/logout') ?>'">Logout</li>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="z-index:10000;cursor:pointer">
+                                            <li class="dropdown-item" href="#"><i class="icofont-user"></i> Profile</li>
+                                            <li class="dropdown-item" href="#"><i class="icofont-key"></i> Change Password</li>
+                                            <li class="dropdown-item" href="#" onclick="window.location.href = '<?= base_url('front/Login/logout') ?>'"> <i class="icofont-logout"></i> Logout</li>
                                         </ul>
                                     </li>
                                     <?php } else {

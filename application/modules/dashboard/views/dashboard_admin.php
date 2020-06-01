@@ -1,35 +1,7 @@
 
 	  <div class="az-content-body">
         <div class="row row-sm">
-          <div class="col-sm-6 col-xl-3">
-            <div class="card card-dashboard-twentytwo">
-              <div class="media">
-                <div class="media-icon bg-purple"><i class="typcn typcn-chart-line-outline"></i></div>
-                <div class="media-body">
-                  <h6><?php echo $total_users; ?> <small class="down">+<?php echo $total = $total_users*$total_users/100;?></small></h6>
-                  <span>Users</span>
-                </div>
-              </div>
-              <div class="chart-wrapper">
-                <div id="flotChart1" class="flot-chart"></div>
-              </div><!-- chart-wrapper -->
-            </div><!-- card -->
-          </div><!-- col -->
-          <div class="col-sm-6 col-xl-3 mg-t-20 mg-sm-t-0">
-            <div class="card card-dashboard-twentytwo">
-              <div class="media">
-                <div class="media-icon bg-primary"><i class="typcn typcn-chart-line-outline"></i></div>
-                <div class="media-body">
-                  <h6><?= $today_users ?><small class="up">+<?= $today = $today_users*$today_users/100 ?></small></h6>
-                  <span>Today Users </span>
-                </div>
-              </div>
-              <div class="chart-wrapper">
-                <div id="flotChart2" class="flot-chart"></div>
-              </div><!-- chart-wrapper -->
-            </div><!-- card -->
-          </div><!-- col-3 -->
-		  <!-- This is script is for count page visitor  -->
+		<!-- This is script is for count page visitor  -->
 			<?php
 				
 			$counter_name = "";
@@ -58,18 +30,18 @@
 				// Close the file 
 				fclose($fp); 
 			?>	
-          <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0">
+         <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0">
             <div class="card card-dashboard-twentytwo">
               <div class="media">
-                <div class="media-icon bg-pink"><i class="typcn typcn-chart-line-outline"></i></div>
+                <div class="media-icon bg-teal"><i class="typcn typcn-chart-line-outline"></i></div>
                 <div class="media-body">
-                  <h6><?= $counterVal ?> <small class="down">
+                  <h6><?= $today_queries ?> <small class="up">
 					<?php 
-					$counter = $counterVal*$counterVal/100;
-					echo $counter.' %';
+					   $counter = $today_queries*$today_queries/100;
+					   echo $counter.' %';
 					?>
 				  </small></h6>
-                  <span>Visitors</span>
+                  <span>Todays Queries</span>
                 </div>
               </div>
               <div class="chart-wrapper">
@@ -77,6 +49,35 @@
               </div><!-- chart-wrapper -->
             </div><!-- card -->
           </div><!-- col -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="card card-dashboard-twentytwo">
+              <div class="media">
+                <div class="media-icon bg-purple"><i class="typcn typcn-chart-line-outline"></i></div>
+                <div class="media-body">
+                  <h6><?php echo $total_users; ?> <small class="down">+<?php echo $total = $total_users*$total_users/100;?></small></h6>
+                  <span>Users</span>
+                </div>
+              </div>
+              <div class="chart-wrapper">
+                <div id="flotChart1" class="flot-chart"></div>
+              </div><!-- chart-wrapper -->
+            </div><!-- card -->
+          </div><!-- col -->
+          <div class="col-sm-6 col-xl-3 mg-t-20 mg-sm-t-0">
+            <div class="card card-dashboard-twentytwo">
+              <div class="media">
+                <div class="media-icon bg-primary"><i class="typcn typcn-chart-line-outline"></i></div>
+                <div class="media-body">
+                  <h6><?= $today_users ?><small class="up">+<?= $today = $today_users*$today_users/100 ?></small></h6>
+                  <span>Today Users </span>
+                </div>
+              </div>
+              <div class="chart-wrapper">
+                <div id="flotChart2" class="flot-chart"></div>
+              </div><!-- chart-wrapper -->
+            </div><!-- card -->
+          </div><!-- col-3 -->
+		  
           <div class="col-sm-6 col-xl-3 mg-t-20 mg-xl-t-0">
             <div class="card card-dashboard-twentytwo">
               <div class="media">
@@ -95,7 +96,9 @@
                 <div id="flotChart4" class="flot-chart"></div>
               </div><!-- chart-wrapper -->
             </div><!-- card -->
-          </div><!-- col -->
+          </div>
+		  
+          <!-- col -->
           <div class="col-xl-9 mg-t-20">
             <div class="card card-dashboard-twentyone">
               <div class="row no-gutters">
