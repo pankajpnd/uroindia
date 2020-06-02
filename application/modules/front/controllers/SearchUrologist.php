@@ -37,8 +37,27 @@ class SearchUrologist extends MY_Controller
 	public function index()
 	{
 		$data['page'] = "front/searchUrologist";
-		
+		$data['states'] = $this->common_model->getAllData('mst_state','*');
 		$this->template->template_front($data);
+	}
+	
+	public function formSearchDoctor()
+	{
+	
+		$query="";
+		$state       	=   $this->input->post('state');
+		$city     	 	=   $this->input->post('city');
+		$doctor       	=   $this->input->post('doctor');
+		$clinic       	=   $this->input->post('clinic');
+		
+		$state       	=   ($state!='')?$query.= " reg_state = $state":"";
+		$city     	 	=   ($city!='')?$query.= " and reg_city = $city":"";
+		$doctor       	=   ($doctor!='')?$query.= " and reg_name = $doctor":"";
+		// $clinic       	=   ($clinic!='')?$query.= " and reg_state = $clinic":"";
+		
+		$data['doctors'] = $this->Common_model->getAllData('mst_doctor','','',$query,'','','','');
+		// echo $this->db->last_query();die;
+		$this->load->view('front/_searchUrologist',$data);
 	}
 	
 	

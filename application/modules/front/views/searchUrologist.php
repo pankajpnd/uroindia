@@ -22,18 +22,20 @@
         <!-- Doctor Search -->
         <div class="doctor-search-area">
             <div class="container">
-                <form>
+                <form action="#" id="formSearchDoctor">
                     <div class="row doctor-search-wrap">
                         <div class="col-sm-6 col-lg-6">
                             <div class="doctor-search-item">
                                 <div class="form-group">
                                     <i class="icofont-map"></i>
                                     <label>State</label>
-                                    <input type="text" class="form-control" placeholder="Select State">
+									<select name="state" id="state" class="form-control" onchange="GetCity(this.value);formSearchDoctor()" required>
+                                        <option value="">Select State</option>
+                                        <?php foreach($states as $state){ ?>
+                                        <option value="<?php echo $state->state_id; ?>"><?php echo $state->state_name; ?></option>
+                                        <?php } ?>
+                                    </select>
                                 </div>
-                                <button type="submit" class="btn doctor-search-btn">
-                                    <i class="icofont-search-1"></i>
-                                </button>
                             </div>
                         </div>
                         <div class="col-sm-6 col-lg-6">
@@ -41,21 +43,18 @@
                                 <div class="form-group">
                                     <i class="icofont-location-pin"></i>
                                     <label>City</label>
-                                    <select class="form-control">
-                                        <option>Select City</option>
+                                    <select name="city" id="city" class="form-control" onchange="formSearchDoctor()" required>
+                                        <option value="">Select City</option>
                                     </select>
                                 </div>
                             </div>
                         </div><div class="col-sm-6 col-lg-6">
                             <div class="doctor-search-item">
                                 <div class="form-group">
-                                    <i class="icofont-map-pins"></i>
-                                    <label>Pin Code</label>
-                                    <input type="text" class="form-control" placeholder="Postal Code">
+                                    <i class="icofont-doctor"></i>
+                                    <label>Doctor Name</label>
+                                    <input type="text" class="form-control" name="doctor" id="doctor" onkeypress="formSearchDoctor()" placeholder="Doctor Name">
                                 </div>
-                                <button type="submit" class="btn doctor-search-btn">
-                                    <i class="icofont-search-1"></i>
-                                </button>
                             </div>
                         </div>
                         <div class="col-sm-6 col-lg-6">
@@ -63,12 +62,7 @@
                                 <div class="form-group">
                                     <i class="icofont-hospital"></i>
                                     <label>Clinic Name</label>
-                                    <select class="form-control">
-                                        <option>Neurosurgeon</option>
-                                        <option>Cardiology</option>
-                                        <option>Pathology</option>
-                                        <option>Dental Care</option>
-                                    </select>
+                                    <input type="text" class="form-control" name="clinic" id="clinic" onkeypress="formSearchDoctor()" placeholder="Clinic Name">
                                 </div>
                             </div>
                         </div>
@@ -83,135 +77,52 @@
             <div class="doctor-shape">
                 <img src="<?php bs() ?>assets/img/doctor/2.png" alt="Shape">
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
-                        <div class="doctor-item">
-                            <div class="doctor-top">
-                                <img src="<?php bs() ?>assets/img/home-one/doctor/1.jpg" alt="Doctor">
-                                <a href="appointment.html">Get Appointment</a>
-                            </div>
-                            <div class="doctor-bottom">
-                                <h3>
-                                    <a href="<?= base_url('front/DoctorProfile') ?>">Dr. Babatunde</a>
-                                </h3>
-                                <span>Neurosurgeon</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".5s">
-                        <div class="doctor-item">
-                            <div class="doctor-top">
-                                <img src="<?php bs() ?>assets/img/home-one/doctor/2.jpg" alt="Doctor">
-                                <a href="appointment.html">Get Appointment</a>
-                            </div>
-                            <div class="doctor-bottom">
-                                <h3>
-                                    <a href="<?= base_url('front/DoctorProfile') ?>">Dr. Addition Smith</a>
-                                </h3>
-                                <span>Neurosurgeon</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".7s">
-                        <div class="doctor-item">
-                            <div class="doctor-top">
-                                <img src="<?php bs() ?>assets/img/home-one/doctor/3.jpg" alt="Doctor">
-                                <a href="appointment.html">Get Appointment</a>
-                            </div>
-                            <div class="doctor-bottom">
-                                <h3>
-                                    <a href="<?= base_url('front/DoctorProfile') ?>">Dr. Sarah Taylor</a>
-                                </h3>
-                                <span>Dental Surgeon</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
-                        <div class="doctor-item">
-                            <div class="doctor-top">
-                                <img src="<?php bs() ?>assets/img/home-one/doctor/4.jpg" alt="Doctor">
-                                <a href="appointment.html">Get Appointment</a>
-                            </div>
-                            <div class="doctor-bottom">
-                                <h3>
-                                    <a href="<?= base_url('front/DoctorProfile') ?>">Dr. Mac Smith</a>
-                                </h3>
-                                <span>Neurosurgeon</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".5s">
-                        <div class="doctor-item">
-                            <div class="doctor-top">
-                                <img src="<?php bs() ?>assets/img/home-one/doctor/5.jpg" alt="Doctor">
-                                <a href="appointment.html">Get Appointment</a>
-                            </div>
-                            <div class="doctor-bottom">
-                                <h3>
-                                    <a href="<?= base_url('front/DoctorProfile') ?>">Dr. Alinson Backer</a>
-                                </h3>
-                                <span>Neurosurgeon</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".7s">
-                        <div class="doctor-item">
-                            <div class="doctor-top">
-                                <img src="<?php bs() ?>assets/img/home-one/doctor/6.jpg" alt="Doctor">
-                                <a href="appointment.html">Get Appointment</a>
-                            </div>
-                            <div class="doctor-bottom">
-                                <h3>
-                                    <a href="<?= base_url('front/DoctorProfile') ?>">Dr. Jas Macham</a>
-                                </h3>
-                                <span>Dental Surgeon</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
-                        <div class="doctor-item">
-                            <div class="doctor-top">
-                                <img src="<?php bs() ?>assets/img/home-one/doctor/7.jpg" alt="Doctor">
-                                <a href="appointment.html">Get Appointment</a>
-                            </div>
-                            <div class="doctor-bottom">
-                                <h3>
-                                    <a href="<?= base_url('front/DoctorProfile') ?>">Dr. John Micheal</a>
-                                </h3>
-                                <span>Neurosurgeon</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".5s">
-                        <div class="doctor-item">
-                            <div class="doctor-top">
-                                <img src="<?php bs() ?>assets/img/home-one/doctor/8.jpg" alt="Doctor">
-                                <a href="appointment.html">Get Appointment</a>
-                            </div>
-                            <div class="doctor-bottom">
-                                <h3>
-                                    <a href="<?= base_url('front/DoctorProfile') ?>">Dr. Shane Warne</a>
-                                </h3>
-                                <span>Neurosurgeon</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4 wow fadeInUp" data-wow-delay=".7s">
-                        <div class="doctor-item">
-                            <div class="doctor-top">
-                                <img src="<?php bs() ?>assets/img/home-one/doctor/9.jpg" alt="Doctor">
-                                <a href="appointment.html">Get Appointment</a>
-                            </div>
-                            <div class="doctor-bottom">
-                                <h3>
-                                    <a href="<?= base_url('front/DoctorProfile') ?>">Dr. Luis Moris</a>
-                                </h3>
-                                <span>Dental Surgeon</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="container" id="getUrologist">
+                
             </div>
         </section>
         <!-- End Doctors -->
+		
+<script>
+    $(document).ready(function() {
+          
+    });
+
+    function GetCity(state_id){
+        $.ajax({
+            url:'<?= base_url('front/home/get_city_by_state'); ?>',
+            data:{'state_id':state_id},
+            type:'post',
+            dataType:'json',
+            success:function(res){
+                var content = "";
+                $.each(res, function(k, v){
+                    content += "<option value='"+ v.city_id +"'>"+ v.city_name +"</option>";
+                });
+                $("#city").html(content);
+            }
+        });
+    }
+    function formSearchDoctor(){
+		// alert($('#formSearchDoctor').serialize());
+		// var formdata = $('#formSearchDoctor').serialize();
+		var state = $("#state").val();
+		var city = $("#city").val();
+		var doctor = $("#doctor").val();
+		var clinic = $("#clinic").val();
+        $.ajax({
+            url:'<?= base_url('front/SearchUrologist/formSearchDoctor'); ?>',
+            data:{state:state,city:city,doctor:doctor,clinic:clinic},
+            type:'post',
+            // dataType:'json',
+            success:function(res){
+				alert(res);
+                // var content = "";
+                // $.each(res, function(k, v){
+                    // content += "<option value='"+ v.city_id +"'>"+ v.city_name +"</option>";
+                // });
+                $("#getUrologist").html(res);
+            }
+        });
+    }
+</script>

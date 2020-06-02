@@ -16,7 +16,7 @@ class WhyUs extends MY_Controller
 		$this->load->config('ion_auth');
 
 		$this->lang->load('auth');
-		$this->load->model(array('Users_modal','Users_groups','common_model'));
+		$this->load->model(array('Users_modal','Users_groups','common_model','MiscTopic'));
 		// Include the google api php libraries
 		include_once APPPATH."libraries/google-api-php-client/Google_Client.php";
 		include_once APPPATH."libraries/google-api-php-client/contrib/Google_Oauth2Service.php";
