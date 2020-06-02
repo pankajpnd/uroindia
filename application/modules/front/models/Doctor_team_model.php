@@ -8,6 +8,7 @@ class Doctor_team_model extends CI_Model
 	{
 		$this->db->order_by('reg_order','asc');
 		$this->db->where('reg_order > 0');
+		$this->db->where('reg_status = 2');
 		$this->db->limit($limit);
 		$query = $this->db->get('mst_doctor');
 		return $query->result();

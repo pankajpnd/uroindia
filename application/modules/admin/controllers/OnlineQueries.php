@@ -1,14 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Hospitals extends MY_Controller 
+class OnlineQueries extends MY_Controller 
 {
 	public function __construct()
 	{
 		parent::__construct();
 		//Do your magic here
 	    $this->load->module('template'); 
-	    $this->load->model('common_model'); 
 	    $this->load->library('form_validation'); 
 
 		if (!$this->ion_auth->logged_in()):
@@ -21,18 +20,18 @@ class Hospitals extends MY_Controller
 
 	public function index()
 	{
-		$data['hospital'] = $this->common_model->getAllData('mst_hospital','*');
-		$data['page'] = "admin/hospitals";
+		$data['patients_queries'] = $this->Common_model->getAllData('patients_queries','*');
+		$data['page'] = "admin/OnlineQueries";
   		$this->template->template_backend($data);
 	}
+	// public function changestatus()
+	// {
+		// $regid = $_REQUEST['regid'];
+		// $data['reg_status'] = $_REQUEST['reg_status'];
+		// $this->Common_model->edit_record_by_any_id('mst_doctor','reg_id',$regid,$data);
+	// }
 	
-	public function changestatus()
-	{
-		$hosp_id = $_REQUEST['hosp_id'];
-		$data['hosp_status'] = $_REQUEST['hosp_status'];
-		$this->Common_model->edit_record_by_any_id('mst_hospital','hosp_id',$hosp_id,$data);
-	}
 }
 
-/* End of file Hospitals.php */
-/* Location: ./application/modules/blog/controllers/Hospitals.php */
+/* End of file OnlineQueries.php */
+/* Location: ./application/modules/blog/controllers/OnlineQueries.php */

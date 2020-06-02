@@ -8,6 +8,7 @@ class Hospital_model extends CI_Model
 	{
 		$this->db->order_by('hosp_order','asc');
 		$this->db->where('hosp_order > 0');
+		$this->db->where('hosp_status = 2');
 		$this->db->limit($limit);
 		$query = $this->db->get('mst_hospital');
 		return $query->result();

@@ -14,7 +14,7 @@
           <div class="modal-body">
 		  		<form id="add_cat_validate" action="<?= base_url('admin/SupAdm/newssave') ?>" method="post" class="form-horizontal row-border">
 
-<div class="form-group">
+						<div class="form-group">
 							<div class="row row-sm">
 								<div class="col-sm-4">
 									<label class="az-content-label tx-11 tx-medium tx-gray-600">Select Type</label>

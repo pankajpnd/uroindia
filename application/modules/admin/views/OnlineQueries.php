@@ -53,8 +53,8 @@
 				<div class="card-header">
 				
 				<div class="d-flex flex-row justify-content-between mg-b-20">
-				<h4 class="card-title">Hospitals</h4>
-				  <a href="#modaldemo8" class="modal-effect btn btn-dark btn-red" data-toggle="modal" class="modal fade effect-scale ">Add Hospitals</a>
+				<h4 class="card-title">Online Queries</h4>
+				 <!-- <a href="#modaldemo8" class="modal-effect btn btn-dark btn-red" data-toggle="modal" class="modal fade effect-scale ">Add Doctors</a>-->
 				</div>
 				<div class="col-sm-4 col-md-2 col-xl-2 pull-right">
 					
@@ -66,30 +66,25 @@
 					  <thead>
 						<tr>
 						  <th class="wd-9p">Sl No.</th>
-						  <th class="wd-15p">Hospital Name</th>
-						  <th class="wd-51p">Email</th>
-						  <th class="wd-10p">Contact</th>
-						  <th class="wd-15p">Photo</th>
+						  <th class="wd-30p">Patient Name</th>
+						  <th class="wd-30p">Phone</th>
 						  <th class="wd-15p">Action</th>
 						</tr>
 					  </thead>
 					  <tbody>
-					  <?php if(!empty($hospital)): ?>
-					  <?php $sno=0;foreach($hospital as $hosp): $sno++?>
+					  <?php if(!empty($patients_queries)): ?>
+					  <?php $sno=0;foreach($patients_queries as $pq): $sno++;
+					  ?>
 						<tr>
-						  <td><?php echo $sno ?></td>
-						  <td><?php echo ucwords($hosp->hosp_name);?></td>
-						  <td><?php echo ucwords($hosp->hosp_email);?></td>
-						  <td><?php echo $hosp->hosp_hmob; ?></td>
-						  <td><img src="<?php echo bs().$hosp->hosp_image;?>" height="100px" /></td>
-						  <td>
-							<select name="regstatus" id="regstatus" class="form-control" onchange="change_status(<?php echo $hosp->hosp_id; ?>,this.value)">
-							
-							<option value="0" <?php if($hosp->hosp_status==0){ echo 'selected' ; } ?>>In Active</option>
-							<option value="1" <?php if($hosp->hosp_status==1){ echo 'selected' ; } ?>>Pending</option>
-							<option value="2" <?php if($hosp->hosp_status==2){ echo 'selected' ; } ?> >Approve</option>
+							<td><?php echo $sno ?></td>
+							<td><?php echo $this->Common_model->findfield('users','id',$pq->qry_user_id,'first_name')." ".$this->Common_model->findfield('users','id',$pq->qry_user_id,'first_name');?></td>
+							<td><?php echo $this->Common_model->findfield('users','id',$pq->qry_user_id,'phone');?></td>
+							<td>
+							<select name="regstatus" id="regstatus" class="form-control" onchange="change_status(<?php echo $pq->reg_id; ?>,this.value)">
+								<option value="0" <?php if($pq->qry_status==0){ echo 'selected' ; } ?>>In Active</option>
+								<option value="1" <?php if($pq->qry_status==1){ echo 'selected' ; } ?>>Pending</option>
+								<option value="2" <?php if($pq->qry_status==2){ echo 'selected' ; } ?> >Approve</option>
 							</select>
-							
 							</td>
 						</tr>
 						<?php endforeach ?>   
@@ -112,16 +107,15 @@
 		  
     </div><!-- row -->
 </div><!-- az-content-body -->
-
 <script type="text/javascript">
-	function change_status(hosp_id,hosp_status)
+	function change_status(regid,reg_status)
 	{ 
 		try {
 		$.ajax({   
 			type: "GET",
 			method: "POST",  
-			url: "<?php echo base_url('admin/Hospitals/changestatus'); ?>",  
-			data:{hosp_id:hosp_id,hosp_status:hosp_status}, 
+			url: "<?php echo base_url('admin/Doctors/changestatus'); ?>",  
+			data:{regid:regid,reg_status:reg_status}, 
 
 			success: function(msg){
 			$("#pos1").html(msg);

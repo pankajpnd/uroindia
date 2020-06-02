@@ -10,7 +10,7 @@
                     <div class="col-sm-4 col-lg-3 wow fadeInUp" data-wow-delay=".3s">
                         <div class="doctor-item">
                             <div class="doctor-top">
-								<img src="<?php echo bs().$hosp->hosp_image;?>" alt="Doctor" height="240px">
+								<img src="<?php echo bs().$hosp->hosp_image;?>" alt="Doctor" height="160px">
                                <!-- <a href="appointment.html">Consult Online</a>-->
                             </div>
                             <div class="doctor-bottom">
