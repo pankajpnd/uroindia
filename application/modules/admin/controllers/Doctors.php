@@ -8,7 +8,6 @@ class Doctors extends MY_Controller
 		parent::__construct();
 		//Do your magic here
 	    $this->load->module('template'); 
-	    $this->load->model('common_model'); 
 	    $this->load->library('form_validation'); 
 
 		if (!$this->ion_auth->logged_in()):
@@ -21,9 +20,15 @@ class Doctors extends MY_Controller
 
 	public function index()
 	{
-		$data['doctor'] = $this->common_model->getAllData('mst_doctor','*');
+		$data['doctor'] = $this->Common_model->getAllData('mst_doctor','*');
 		$data['page'] = "admin/doctors";
   		$this->template->template_backend($data);
+	}
+	public function changestatus()
+	{
+		$regid = $_REQUEST['regid'];
+		$data['reg_status'] = $_REQUEST['reg_status'];
+		$this->Common_model->edit_record_by_any_id('mst_doctor','reg_id',$regid,$data);
 	}
 	
 }

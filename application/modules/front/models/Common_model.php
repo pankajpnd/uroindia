@@ -7,6 +7,16 @@
 */
 class Common_model extends CI_Model
 {
+	public function edit_record_by_any_id($tbl,$id_name,$id,$data)
+		{
+            $this->db->where($id_name,$id);
+            if($this->db->update($tbl,$data))
+			{ 
+				return true;
+            } else {
+				return false;	
+            }
+        }
 	public function findfield($table, $fieldname1, $fieldvalue1, $returnfield)
 		{
 			$this->db->select($returnfield);

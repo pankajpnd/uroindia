@@ -77,7 +77,8 @@
 					  </thead>
 					  <tbody>
 					  <?php if(!empty($doctor)): ?>
-					  <?php $sno=0;foreach($doctor as $doc): $sno++?>
+					  <?php $sno=0;foreach($doctor as $doc): $sno++;
+					  ?>
 						<tr>
 						  <td><?php echo $sno ?></td>
 						  <td><?php echo ucwords($doc->reg_name);?></td>
@@ -87,10 +88,14 @@
 						  <td><?php echo $doc->reg_email; ?></td>
 						  <td><img src="<?php echo bs().$doc->reg_image;?>" height="100px" /></td>
 						  <td>
-							<select name="doc_<?php echo $doc->reg_status ; ?>" id="doc_<?php echo $doc->reg_status ; ?>" class="form-control" onchange="change_shift('<?php echo $ft['shift_id'] ; ?>')">
-							<option value="1" <?php if($doc->reg_status==1){ echo 'selected' ; } ?> >Active</option>
+							<select name="regstatus" id="regstatus" class="form-control" onchange="change_status(<?php echo $doc->reg_id; ?>,this.value)">
+							
 							<option value="0" <?php if($doc->reg_status==0){ echo 'selected' ; } ?>>In Active</option>
-							</select></td>
+							<option value="1" <?php if($doc->reg_status==1){ echo 'selected' ; } ?>>Pending</option>
+							<option value="2" <?php if($doc->reg_status==2){ echo 'selected' ; } ?> >Approve</option>
+							</select>
+							
+							</td>
 						</tr>
 						<?php endforeach ?>   
 
@@ -112,5 +117,24 @@
 		  
     </div><!-- row -->
 </div><!-- az-content-body -->
+<script type="text/javascript">
+	function change_status(regid,reg_status)
+	{ 
+		try {
+		$.ajax({   
+			type: "GET",
+			method: "POST",  
+			url: "<?php echo base_url('admin/Doctors/changestatus'); ?>",  
+			data:{regid:regid,reg_status:reg_status}, 
 
+			success: function(msg){
+			$("#pos1").html(msg);
+			}  
+		}); 
+		}
+		catch (e) {
+			alert(e);
+		} 
+	}
+</script>
     	
