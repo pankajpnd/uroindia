@@ -119,43 +119,23 @@ class Common_model extends CI_Model
 		endif;	
 	}
         
-        function create_thumb_gallery($upload_data, $source_img, $new_img, $width, $height) {
-//Copy Image Configuration
-        $config['image_library'] = 'gd2';
-        $config['source_image'] = $source_img;
-        $config['create_thumb'] = FALSE;
-        $config['new_image'] = $new_img;
-        $config['quality'] = '100%';
-
-        $this->load->library('image_lib');
-        $this->image_lib->initialize($config);
-
-        if (!$this->image_lib->resize()) {
-            echo $this->image_lib->display_errors();
-        } else {
-//Images Copied
-//Image Resizing Starts
-            $config['image_library'] = 'gd2';
-            $config['source_image'] = $source_img;
-            $config['create_thumb'] = FALSE;
-            $config['maintain_ratio'] = TRUE;
-            $config['quality'] = '100%';
-            $config['new_image'] = $new_img;
-            $config['overwrite'] = TRUE;
-            $config['width'] = $width;
-            $config['height'] = $height;
-            $dim = (intval($upload_data['image_width']) / intval($upload_data['image_height'])) - ($config['width'] / $config['height']);
-            $config['master_dim'] = ($dim > 0) ? 'height' : 'width';
-
-            $this->image_lib->clear();
-            $this->image_lib->initialize($config);
-
-            if (!$this->image_lib->resize()) {
-                echo $this->image_lib->display_errors();
-            } else {
-//echo 'Thumnail Created';
-                return true;
-            }
-        }
-    }
+        public function get_by_multiple_con_single($table, $array, $returnfield='')
+		{
+                        if (!empty($returnfield)){
+                                $this->db->select($returnfield);
+                        }else{
+                                $this->db->select('*');
+                        }
+			$this->db->select($returnfield);
+			$this->db->from($table);
+			$this->db->where($array);
+			$query = $this->db->get();
+                        if (!empty($returnfield)){
+                            foreach ($query->result() as $value) {}
+                            return @$value->$returnfield;
+                        }else{
+                               return $query->row();
+                        }
+		}
+                
 }
