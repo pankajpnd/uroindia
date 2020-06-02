@@ -252,6 +252,8 @@ class Register extends MY_Controller
     
 	public function doctors(){
 		
+        $data['degree'] = $this->common_model->getAllData('mst_degree','*');
+        $data['specialty'] = $this->common_model->getAllData('mst_specialty','*');
         $data['states'] = $this->common_model->getAllData('mst_state','*');
         $data['page'] = "front/doctors";
         
@@ -295,7 +297,7 @@ class Register extends MY_Controller
             $config['allowed_types'] = 'gif|jpg|png|bmp';
             $config['width'] = 50;
             $config['height'] = 50;
-            $config['file_name'] = time() . $first_name;
+            $config['file_name'] = time() . $first_name . $_FILES['reg_image']['file_name'];
             $config['file_overwrite'] = true;
             $this->load->library('upload', $config);
             $this->upload->do_upload('reg_image');

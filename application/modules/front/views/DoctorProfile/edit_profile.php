@@ -1,4 +1,5 @@
 <!-- Sign Up -->
+<?php foreach ($profile as $val) { } ?>
         <div class="signup-area">
             <div class="container-fluid">
                 <div class="row">
@@ -11,14 +12,14 @@
                                 </p>
                             </div>
                             <div class="signup-form">
-                                <form action="<?= base_url('front/register/register_doctor') ?>" method="post" enctype="multipart/form-data">
+                                <form action="<?= base_url('front/DoctorProfile/update_doctor') ?>" method="post" enctype="multipart/form-data">
                                     
                                     <div class="row" style="background-color:#e7edf5">
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Doctor Name</label>
-                                                <input type="text" name="reg_name" class="form-control" placeholder="Enter Doctor Name" required>
+                                                <input type="text" name="reg_name" class="form-control" placeholder="Enter Doctor Name" required value="<?php echo $val->reg_name; ?>">
                                             </div>
                                         </div>
                                         <div class="col-lg-1" hidden>
@@ -26,9 +27,9 @@
                                                 <i class="icofont-ui"></i>
                                                 <label>Registration Type</label>
                                                 <select name="reg_type" class="form-control"  required>
-                                                    <option value="1" selected>Doctor</option>
-                                                    <option value="2">Other</option>
-                                                    <option value="3">Uroindia</option>
+                                                    <option value="1" <?php echo ($val->reg_type=='1')?'selected':''; ?>>Doctor</option>
+                                                    <option value="2" <?php echo ($val->reg_type=='2')?'selected':''; ?>>Other</option>
+                                                    <option value="3" <?php echo ($val->reg_type=='3')?'selected':''; ?>>Uroindia</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -39,7 +40,7 @@
                                                 <select name="reg_dob_day" class="form-control"  required>
                                                     <option value="0" selected>Day</option>
                                                     <?php for($i=1;$i<=31;$i++){?>
-                                                    <option value="<?php echo $i;?>"><?php echo $i;?></option>
+                                                    <option value="<?php echo $i;?>" <?php echo (date("d",strtotime($val->reg_dob))==sprintf("%02d",$i))?'selected':''; ?>><?php echo $i;?></option>
                                                     <?php } ?>
                                                 </select>
                                             </div>
@@ -51,7 +52,7 @@
                                                 <select name="reg_dob_month" class="form-control"  required>
                                                     <option value="0" selected>Month</option>
                                                     <?php for($i=1;$i<=12;$i++){?>
-                                                    <option value="<?php echo $i;?>"><?php echo $i;?></option>
+                                                    <option value="<?php echo $i;?>"<?php echo (date("m",strtotime($val->reg_dob))==sprintf("%02d",$i))?'selected':''; ?>><?php echo $i;?></option>
                                                     <?php } ?>
                                                 </select>
                                             </div>
@@ -63,7 +64,7 @@
                                                 <select name="reg_dob_year" class="form-control"  required>
                                                     <option value="0" selected>Year</option>
                                                     <?php for($i=1960;$i<=date('Y');$i++){ ?>
-                                                    <option value="<?php echo $i;?>"><?php echo $i;?></option>
+                                                    <option value="<?php echo $i;?>" <?php echo (date("Y",strtotime($val->reg_dob))==$i)?'selected':''; ?>><?php echo $i;?></option>
                                                     <?php } ?>
                                                 </select>
                                             </div>
@@ -74,8 +75,8 @@
                                                 <label>Gender</label>
                                                 <select class="form-control" name="reg_gender" id="exampleFormControlSelect1" required>
                                                     <option value="">Choose Gender</option>
-                                                    <option value="1">Male</option>
-                                                    <option value="2">Female</option>
+                                                    <option value="1" <?php echo ($val->reg_gender=='1')?'selected':''; ?>>Male</option>
+                                                    <option value="2" <?php echo ($val->reg_gender=='2')?'selected':''; ?>>Female</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -86,7 +87,7 @@
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Designation</label>
-                                                <input type="text" name="reg_desig" class="form-control" placeholder="Designation" required>
+                                                <input type="text" name="reg_desig" class="form-control" placeholder="Designation" required value="<?php echo $val->reg_desig; ?>">
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
@@ -95,8 +96,8 @@
                                                 <label>Category</label>
                                                 <select class="form-control" name="reg_job" id="exampleFormControlSelect1" required>
                                                     <option value="">Choose Previouse Job Type</option>
-                                                    <option value="1">Private</option>
-                                                    <option value="2">Government</option>
+                                                    <option value="1" <?php echo ($val->reg_job=='1')?'selected':''; ?>>Private</option>
+                                                    <option value="2" <?php echo ($val->reg_job=='2')?'selected':''; ?>>Government</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -107,7 +108,7 @@
                                                 <select name="reg_degree" class="form-control"  required>
                                                     <option value="">Select Degree</option>
                                                     <?php foreach($degree as $deg){ ?>
-                                                    <option value="<?php echo $deg->deg_id; ?>"><?php echo $deg->deg_name; ?></option>
+                                                    <option value="<?php echo $deg->deg_id; ?>" <?php echo ($val->reg_degree==$deg->deg_id)?'selected':''; ?>><?php echo $deg->deg_name; ?></option>
                                                     <?php } ?>
                                                 </select>
                                             </div>
@@ -116,7 +117,7 @@
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Year</label>
-                                                <input type="number" name="reg_year" class="form-control" placeholder="Enter Year" required>
+                                                <input type="number" name="reg_year" class="form-control" placeholder="Enter Year" required value="<?php echo $val->reg_year; ?>">
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
@@ -126,7 +127,7 @@
                                                 <select name="reg_specialty" class="form-control"  >
                                                     <option value="">Select Speciality</option>
                                                     <?php foreach($specialty as $spec){ ?>
-                                                    <option value="<?php echo $spec->spec_id; ?>"><?php echo $spec->spec_name; ?></option>
+                                                    <option value="<?php echo $spec->spec_id; ?>" <?php echo ($val->reg_degree==$spec->spec_id)?'selected':''; ?>><?php echo $spec->spec_name; ?></option>
                                                     <?php } ?>
                                                 </select>
                                             </div>
@@ -135,7 +136,7 @@
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Registration No.</label>
-                                                <input type="text" name="reg_regno" class="form-control" placeholder="Enter Registration No." required>
+                                                <input type="text" name="reg_regno" value="<?php echo $val->reg_regno; ?>" class="form-control" placeholder="Enter Registration No." required>
                                             </div>
                                         </div>
                                         <div class="col-lg-8">
@@ -154,10 +155,10 @@
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>State</label>
-                                                <select name="reg_state" class="form-control" onchange="GetCity(this.value)" required>
+                                                <select name="reg_state" class="form-control" onchange="GetCity(this.value,'')" required>
                                                     <option value="">Select State</option>
                                                     <?php foreach($states as $state){ ?>
-                                                    <option value="<?php echo $state->state_id; ?>"><?php echo $state->state_name; ?></option>
+                                                    <option value="<?php echo $state->state_id; ?>" <?php echo ($val->reg_state==$state->state_id)?'selected':''; ?>><?php echo $state->state_name; ?></option>
                                                     <?php } ?>
                                                 </select>
                                             </div>
@@ -168,6 +169,9 @@
                                                 <label>City</label>
                                                 <select name="reg_city" id="reg_city" class="form-control" required>
                                                     <option value="">Select City</option>
+                                                    <?php foreach($cities as $city){ ?>
+                                                    <option value="<?php echo $city->city_id; ?>" <?php echo ($val->reg_city==$city->city_id)?'selected':''; ?>><?php echo $city->city_name; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                         </div>                  
@@ -179,28 +183,28 @@
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Mobile Number</label>
-                                                <input type="text" name="reg_mob" class="form-control" placeholder="Enter Mobile number" required>
+                                                <input type="text" name="reg_mob" value="<?php echo $val->reg_mob; ?>" class="form-control" placeholder="Enter Mobile number" required readonly>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Email</label>
-                                                <input type="text" name="reg_email" class="form-control" placeholder="Enter Email" required>
+                                                <input type="text" name="reg_email" class="form-control" value="<?php echo $val->reg_email; ?>" placeholder="Enter Email" required readonly>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Land Line No.</label>
-                                                <input type="text" name="reg_phon" class="form-control" placeholder="Enter Land Line No." required>
+                                                <input type="text" name="reg_phon" class="form-control" value="<?php echo $val->reg_phon; ?>" placeholder="Enter Land Line No." required>
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Website</label>
-                                                <input type="text" name="reg_webs" class="form-control" placeholder="Enter Website" >
+                                                <input type="text" name="reg_webs" value="<?php echo $val->reg_webs; ?>" class="form-control" placeholder="Enter Website" >
                                             </div>
                                         </div>                    
                                     </div>
@@ -221,21 +225,6 @@
                                     </div>
 
                                     <div class="row mt-20" style="background-color:#e7edf5">
-                                        <div class="col-lg-4">
-                                            <div class="form-group">
-                                                <i class="icofont-ui"></i>
-                                                <label>Password</label>
-                                                <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="form-group">
-                                                <i class="icofont-ui"></i>
-                                                <label>Confirm Password</label>
-                                                <input type="password" name="confirm_password" class="form-control" placeholder="Enter Confirm Password" required>
-                                            </div>
-                                        </div>
-                                       
                                         <div class="row">
                                         <div class="col-lg-12">
                                             <div class="form-group" style="margin-left:15px">
@@ -247,7 +236,7 @@
                                        
                                         <div class="col-lg-12">
                                             <div class="text-center">
-                                                <button type="submit" class="btn signup-btn">Register</button></br>
+                                                <button type="submit" class="btn signup-btn">Update</button></br>
                                             </div>
                                         </div>
                                         
@@ -335,10 +324,13 @@
 
 <script>
     $(document).ready(function() {
-          
+        //var state_id = '<?php //echo $val->reg_state; ?>';
+        //var city_id = '<?php //echo $val->reg_city; ?>';
+//        alert(city_id);
+//         GetCity(state_id, city_id);
     });
 
-    function GetCity(state_id){
+    function GetCity(state_id, cid){
         $.ajax({
             url:'<?= base_url('front/home/get_city_by_state'); ?>',
             data:{'state_id':state_id},
@@ -347,7 +339,11 @@
             success:function(res){
                 var content = "";
                 $.each(res, function(k, v){
-                    content += "<option value='"+ v.city_id +"'>"+ v.city_name +"</option>";
+                    if(v.city_id==cid){
+                        content += "<option value='"+ v.city_id +"' selected>"+ v.city_name +"</option>";
+                    }else{
+                        content += "<option value='"+ v.city_id +"'>"+ v.city_name +"</option>";
+                    }
                 });
                 $("#reg_city").html(content);
             }

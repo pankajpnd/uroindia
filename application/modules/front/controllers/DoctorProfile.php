@@ -115,6 +115,59 @@ class DoctorProfile extends MY_Controller
                 redirect('front/login', 'refresh');
             }
 	}
+		
+	public function edit_detail(){
+            if ($this->ion_auth->logged_in() && $this->session->userdata('user_type')==3){                
+                $doc_id = $this->session->userdata('parent_id');
+                $data['degree'] = $this->common_model->getAllData('mst_degree','*');
+                $data['specialty'] = $this->common_model->getAllData('mst_specialty','*');
+                $data['states'] = $this->common_model->getAllData('mst_state','*');
+                $data['cities'] = $this->common_model->getAllData('mst_city','*');
+                $data['profile'] = $this->common_model->getAllData('mst_doctor','*','','reg_id='.$doc_id);
+                $data['page'] = "front/DoctorProfile/edit_profile";
+                $this->template->template_front($data);                
+            }else{
+                redirect('front/login', 'refresh');
+            }
+	}
+        public function update_doctor(){        
+        
+        $dob_day        =   sprintf("%02d",$this->input->post('reg_dob_day'));
+        $dob_month      =   sprintf("%02d",$this->input->post('reg_dob_month'));
+        $dob_year       =   $this->input->post('reg_dob_year');
+        $doc_id = $this->session->userdata('parent_id');
+        foreach($this->db->list_fields('mst_doctor') as $field){
+            if(!empty($this->input->post($field))){
+                $doctor_data[$field] = $this->input->post($field);
+            }
+        }
+        $doctor_data['reg_dob']     = $dob_year.'-'.$dob_month.'-'.$dob_day;
+        $_FILES['reg_image']['name'];
+        if(!empty($_FILES['reg_image']['name'])){
+            $path = './uploads';
+            if (!is_dir($path))
+                mkdir($path);
+            $path = './uploads/DoctorPhotos';
+            if (!is_dir($path))
+                mkdir($path);
+
+            $config['upload_path'] = $path;
+            $config['allowed_types'] = 'gif|jpg|png|bmp';
+            $config['width'] = 50;
+            $config['height'] = 50;
+            $config['file_name'] = time() . $doctor_data['reg_name'] . $_FILES['reg_image']['name'];
+            $config['file_overwrite'] = true;
+            $this->load->library('upload', $config);
+            $this->upload->do_upload('reg_image');
+            $data1 = array('upload_data' => $this->upload->data());
+            $error = array('error' => $this->upload->display_errors());
+            $doctor_data['reg_image'] = $path . '/' . $data1['upload_data']['file_name'];
+        }
+        $this->common_model->edit_record_by_any_id('mst_doctor','reg_id',$doc_id,$doctor_data);  
+        $msg = "Detail Updated Successfully";
+        $this->session->set_flashdata('success',$msg);
+        redirect('front/DoctorProfile/doc_profile', 'refresh');
+    }  
 	
 	
 }
