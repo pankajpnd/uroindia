@@ -78,6 +78,7 @@ class Hospital extends MY_Controller
             $error = array('error' => $this->upload->display_errors());
             $hospital_data['hosp_image'] = $path . '/' . $data1['upload_data']['file_name'];
             $result = $this->common_model->InsertData('mst_hospital',$hospital_data);
+            $host_id = $this->db->insert_id();
             if($result) {
                 
                 $group = array($gp);
@@ -89,6 +90,7 @@ class Hospital extends MY_Controller
                     'phone'      => $phone,   
                     'state'      => $state,   
                     'city'       => $city,   
+                    'hdp_id'     => $host_id,   
                     'user_type'  => 2,   
                 );
 

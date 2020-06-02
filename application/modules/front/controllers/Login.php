@@ -111,23 +111,23 @@ class Login extends MY_Controller
 					$this->session->set_flashdata('message', $this->ion_auth->messages());
                                         $user_type = $this->session->userdata('user_type');
 					if ($this->ion_auth->is_admin()){
-						redirect('dashboard/', 'refresh');
+                                            redirect('dashboard/', 'refresh');
 					}else if($user_type==2){
-                        redirect('dashboard/', 'refresh');
+                                            redirect('dashboard/', 'refresh');
 					}else if($user_type==3){
-                        redirect('front/home/doctors_profile', 'refresh');
+                                            redirect('front/DoctorProfile/doc_profile', 'refresh');
 					}else if($user_type==4){
-                        redirect('front/home/hospital_profile', 'refresh');
+                                            redirect('front/home/hospital_profile', 'refresh');
 					}else if($user_type==5){
-                        if(!empty($this->input->post('health_query'))){
-                           $pat_query_data['qry_user_id']   = $this->session->userdata('user_id');
-                           $pat_query_data['qry_desc'] = $this->input->post('health_query');
-                           $pat_query_data['qry_entrydt'] = date("Y-m-d H:i:s");
-                           $this->common_model->InsertData('patients_queries',$pat_query_data); 
-                        }
-                        redirect('front/register/med_history', 'refresh');
+                                            if(!empty($this->input->post('health_query'))){
+                                               $pat_query_data['qry_user_id']   = $this->session->userdata('user_id');
+                                               $pat_query_data['qry_desc'] = $this->input->post('health_query');
+                                               $pat_query_data['qry_entrydt'] = date("Y-m-d H:i:s");
+                                               $this->common_model->InsertData('patients_queries',$pat_query_data); 
+                                            }
+                                            redirect('front/register/med_history', 'refresh');
 					}else if($user_type>5){
-                        redirect('front/home', 'refresh');
+                                            redirect('front/home', 'refresh');
 					}
 				}
 			}

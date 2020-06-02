@@ -302,7 +302,8 @@ class Register extends MY_Controller
             $data1 = array('upload_data' => $this->upload->data());
             $error = array('error' => $this->upload->display_errors());
             $doctor_data['reg_image'] = $path . '/' . $data1['upload_data']['file_name'];
-            $result = $this->common_model->InsertData('mst_doctor',$doctor_data);
+            $result = $this->common_model->InsertData('mst_doctor',$doctor_data);  
+            $doc_id = $this->db->insert_id();
             if($result){
                 
                 $group = array($gp);
@@ -314,6 +315,7 @@ class Register extends MY_Controller
                     'phone'      => $phone,   
                     'state'      => $state,   
                     'city'       => $city,  
+                    'hdp_id'     => $doc_id, 
                     'user_type'  => 3,      
                 );
 

@@ -1953,6 +1953,7 @@ class Ion_auth_model extends CI_Model
 		    $this->identity_column => $user->{$this->identity_column},
 		    'email'                => $user->email,
 		    'user_type'            => $user->user_type,
+		    'parent_id'            => !empty($user->hdp_id)?$user->hdp_id:$user->id,
                     'group_id'             => $group_id,
 		    'group'                => $group,
 		    'user_id'              => $user->id, //everyone likes to overwrite id so we'll use user_id
