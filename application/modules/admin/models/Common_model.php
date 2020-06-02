@@ -178,7 +178,14 @@ class Common_model extends CI_Model
 	  }
 	  return TRUE;
 	}
+	public function update($id,$data,$table)
+	{
+		if (empty($id)) return FALSE;
 
+		$this->db->update($table, $data, array('id' => $id));
+
+		return TRUE;
+	}
 	public function fetch_posts($limit, $start) 
 	{
         $this->db->limit($limit, $start);
@@ -202,5 +209,30 @@ class Common_model extends CI_Model
 			$query = $this->db->query($qry);	
 			return $query->result_array();
 		}
+		
+		
+		
+	function FillDynamicCombo($query,$datafield,$textfield,$selectvalue)  {
+		$query = $this->db->query("$query");
+		$i=1;
+		$selectvalue1="";
+        if(count($query)>0){
+		foreach($query->result() as $row){
+		  if($i==1)
+		  $selectvalue1=$row->$datafield;
+		  
+		  if($selectvalue==$row->$datafield){
+			  echo'<option value="'.$row->$datafield.'" selected>'.ucwords(strtolower($row->$textfield)).'</option>';
+			  $selectvalue1=$selectvalue;
+			}
+		  else {
+			echo'<option value="'.$row->$datafield.'">'.ucwords(strtolower($row->$textfield)).'</option>';
+		   }
+		   $i++;
+		   }
+		}
+		   return $selectvalue1;
+	}	
+	
 }
 ?>
