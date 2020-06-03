@@ -70,7 +70,7 @@ class Hospital extends MY_Controller
             $config['allowed_types'] = 'gif|jpg|png|bmp';
             $config['width'] = 50;
             $config['height'] = 50;
-            $config['file_name'] = time() . $first_name . $_FILES['hosp_image']['file_name'];
+            $config['file_name'] = time() . $first_name . $_FILES['hosp_image']['name'];
             $config['file_overwrite'] = true;
             $this->load->library('upload', $config);
             $this->upload->do_upload('hosp_image');

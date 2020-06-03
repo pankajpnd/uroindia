@@ -53,7 +53,7 @@
                                 <div class="form-group">
                                     <i class="icofont-doctor"></i>
                                     <label>Doctor Name</label>
-                                    <input type="text" class="form-control" name="doctor" id="doctor" onkeypress="formSearchDoctor()" placeholder="Doctor Name">
+                                    <input type="text" class="form-control" name="doctor" id="doctor" onkeyup="formSearchDoctor()" placeholder="Doctor Name">
                                 </div>
                             </div>
                         </div>
@@ -117,8 +117,8 @@
             type:'post',
             // dataType:'json',
             success:function(res){
-				alert(res);
-                // $("#getUrologist").html(res);
+//				alert(res);
+                 $("#getUrologist").html(res);
             }
         });
     }

@@ -115,7 +115,7 @@ class Login extends MY_Controller
 					}else if($user_type==2){
                                             redirect('dashboard/', 'refresh');
 					}else if($user_type==3){
-                                            redirect('front/DoctorProfile/doc_profile', 'refresh');
+                                            redirect('front/DoctorProfile/patient_queries', 'refresh');
 					}else if($user_type==4){
                                             redirect('front/home/hospital_profile', 'refresh');
 					}else if($user_type==5){
