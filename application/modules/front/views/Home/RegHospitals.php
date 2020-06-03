@@ -23,9 +23,6 @@
                     </div>
 					<?php } ?>
                 </div>
-                <div class="doctor-btn">
-                    <a href="<?php bs("front/OurTeam");?>">See All</a>
-                </div>
             </div>
         </section>
         <!-- End Doctors -->

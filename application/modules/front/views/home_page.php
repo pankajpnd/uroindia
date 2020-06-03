@@ -14,7 +14,7 @@
                                 <p>Coronavirus Disease (COVID-19) : Origin, Symptoms, Transmission, Treatment And Precautions</p>
                                 <div class="common-btn">
                                     <a href="<?php bs('front/AskOnline')?>">Consult Online</a>
-                                    <a class="cmn-btn-right" href="about.html">Get Registered</a>
+                                    <a class="cmn-btn-right" href="<?php bs('front/Register/consultant')?>">Get Registered</a>
                                 </div>
                             </div>
                         </div>
@@ -55,8 +55,8 @@
                                 </div>
                                 <h1>Skip the struggle of booking appointments.Consult a doctor at your ease</h1>
                                 <div class="common-btn">
-                                    <a href="appointment.html">Consult Online</a>
-                                    <a class="cmn-btn-right" href="about.html">Get Registered</a>
+                                    <a href="<?php bs('front/AskOnline')?>">Consult Online</a>
+                                    <a class="cmn-btn-right" href="<?php bs('front/Register/consultant')?>">Get Registered</a>
                                 </div>
                             </div>
                         </div>
@@ -73,8 +73,8 @@
                                 </div>
                                 <h1>The Best Doctor gives the Least Medicine</h1>
                                 <div class="common-btn">
-                                    <a href="appointment.html">Consult Online</a>
-                                    <a class="cmn-btn-right" href="about.html">Get Registered</a>
+                                    <a href="<?php bs('front/AskOnline')?>">Consult Online</a>
+                                    <a class="cmn-btn-right" href="<?php bs('front/Register/consultant')?>">Get Registered</a>
                                 </div>
                             </div>
                         </div>

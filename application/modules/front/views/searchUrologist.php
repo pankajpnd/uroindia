@@ -62,7 +62,7 @@
                                 <div class="form-group">
                                     <i class="icofont-hospital"></i>
                                     <label>Clinic Name</label>
-                                    <input type="text" class="form-control" name="clinic" id="clinic" onkeypress="formSearchDoctor()" placeholder="Clinic Name">
+                                    <input type="text" class="form-control" name="clinic" id="clinic" onkeyup="formSearchDoctor()" placeholder="Clinic Name">
                                 </div>
                             </div>
                         </div>
@@ -95,7 +95,7 @@
             type:'post',
             dataType:'json',
             success:function(res){
-                var content = "";
+                var content = "<option value=''>Select City</option>";
                 $.each(res, function(k, v){
                     content += "<option value='"+ v.city_id +"'>"+ v.city_name +"</option>";
                 });
@@ -110,6 +110,7 @@
 		var city = $("#city").val();
 		var doctor = $("#doctor").val();
 		var clinic = $("#clinic").val();
+		// alert(doctor);
         $.ajax({
             url:'<?= base_url('front/SearchUrologist/formSearchDoctor'); ?>',
             data:{state:state,city:city,doctor:doctor,clinic:clinic},
@@ -117,11 +118,7 @@
             // dataType:'json',
             success:function(res){
 				alert(res);
-                // var content = "";
-                // $.each(res, function(k, v){
-                    // content += "<option value='"+ v.city_id +"'>"+ v.city_name +"</option>";
-                // });
-                $("#getUrologist").html(res);
+                // $("#getUrologist").html(res);
             }
         });
     }

@@ -8,13 +8,16 @@ class Template extends MY_Controller
 	{
 		parent::__construct();
 		$this->lang->load('company_profile');
-		$this->load->model(array('Home_Page_model','front/Common_model'));
+		$this->load->model(array('Home_Page_model','front/Common_model','front/MiscTopic'));
 		//Do your magic here
 	}
 
 	public function template_front($data = NULL)
 	{
 		$data['top_menus'] = $this->Home_Page_model->all_top_menus();
+		$data['contact'] = $this->MiscTopic->getMiscTopic('contact');
+		$data['address'] = $this->MiscTopic->getMiscTopic('address');
+		$data['email'] = $this->MiscTopic->getMiscTopic('email');
 		$this->load->view('body_front',$data);
 	}
 

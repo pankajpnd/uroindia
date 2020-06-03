@@ -24,7 +24,7 @@
                                 <li>
                                     <a href="tel:+07554332322">
                                         <i class="icofont-ui-call"></i>
-                                        Call : +91-9893589861
+                                        Call : +91-<?php echo $contact[0]->misc_title;?>
                                     </a>
                                 </li>
                                 <li>
