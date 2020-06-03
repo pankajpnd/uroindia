@@ -42,6 +42,19 @@ class AskOnline extends MY_Controller
 
             $this->template->template_front($data);
 	}
+        
+	public function save_query()
+	{
+            if(!empty($this->input->post('query'))){
+                $pat_query_data['qry_user_id']   = $this->session->userdata('user_id');
+                $pat_query_data['qry_desc'] = $this->input->post('query');
+                $pat_query_data['qry_entrydt'] = date("Y-m-d H:i:s");
+                $this->common_model->InsertData('patients_queries',$pat_query_data);
+                echo json_encode(array('status'=>'success', 'msg'=>'Query Submited Successfully'));
+             }else{
+                echo json_encode(array('status'=>0, 'msg'=>'Something went wrong !!!'));
+             }
+	}
 
 	
 }
