@@ -100,10 +100,12 @@ class Register extends MY_Controller
 //                $this->session->set_flashdata('message', $this->ion_auth->messages());
 //                header("Location: {$_SERVER["HTTP_REFERER"]}");
                 if ($this->ion_auth->login($email, $password, 1)){
-//                    $medhist_data['mhis_uid']   = $this->session->userdata('user_id');
-//                    $medhist_data['mhis_query'] = $this->input->post('health_query');
-//                    $medhist_data['mhis_entrydt'] = date("Y-m-d H:i:s");
-//                    $this->common_model->InsertData('pt_medhist',$medhist_data);            
+                    if(!empty($this->input->post('health_query'))){
+                        $pat_query_data['qry_user_id']   = $this->session->userdata('user_id');
+                        $pat_query_data['qry_desc'] = $this->input->post('health_query');
+                        $pat_query_data['qry_entrydt'] = date("Y-m-d H:i:s");
+                        $this->common_model->InsertData('patients_queries',$pat_query_data); 
+                     }           
                     $this->session->set_flashdata('message', $this->ion_auth->messages());
                     redirect('front/register/med_history', 'refresh');
                 }else{
