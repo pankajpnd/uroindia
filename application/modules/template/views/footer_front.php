@@ -13,15 +13,15 @@
                                 <ul>
                                     <li>
                                         <i class="icofont-ui-message"></i>
-                                        <a href="#"><?php echo $email[0]->misc_title;?></a>
+                                        <a href="#"><?php echo @$email[0]->misc_title;?></a>
                                     </li>
                                     <li>
                                         <i class="icofont-stock-mobile"></i>
-                                        <a href="tel:+07554332322">Call : +91-<?php echo $contact[0]->misc_title;?></a>
+                                        <a href="tel:+07554332322">Call : +91-<?php echo @$contact[0]->misc_title;?></a>
                                     </li>
                                     <li>
                                         <i class="icofont-location-pin"></i>
-                                        <?php echo $address[0]->misc_title;?>
+                                        <?php echo @$address[0]->misc_title;?>
                                     </li>
                                 </ul>
                             </div>
