@@ -44,7 +44,7 @@ class SearchUrologist extends MY_Controller
 	public function formSearchDoctor()
 	{
 	
-		$query="";
+		$query=" 1 ";
 		$state       	=   $this->input->post('state');
 		$city     	 	=   $this->input->post('city');
 		$doctor       	=   $this->input->post('doctor');
@@ -52,7 +52,7 @@ class SearchUrologist extends MY_Controller
 		
 		($state!='')?$query.= " reg_state = $state":"";
 		($city!='')?$query.= " and reg_city = $city":"";
-		($doctor!='')?$query.= " and reg_name lilke '%$doctor%'":"";
+		($doctor!='')?$query.= " and reg_name like '%$doctor%'":"";
 		($clinic!='')?$query.= " and reg_state = $clinic":"";
 		// echo $query;
 		$data['doctors'] = $this->Common_model->getAllData('mst_doctor','','',$query,'','','','');
