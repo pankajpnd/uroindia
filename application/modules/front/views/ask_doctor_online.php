@@ -13,7 +13,9 @@
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
-                            <div class="col-md-12 col-lg-12" style="background-color:#e7edf5;padding:10px">
+							<?php 
+							if (!$this->ion_auth->logged_in()){ ?>
+							<div class="col-md-12 col-lg-12" style="background-color:#e7edf5;padding:10px">
                                 <button type="" class="drop-btn" onclick="OpenForm('signUp_form','signIn_form')">New User</button>
                                 <button type="" class="drop-btn" onclick="OpenForm('signIn_form','signUp_form')">Existing User?</button>
                                 <div class="col-md-12 col-lg-12">
@@ -169,6 +171,10 @@
                                     </div>
                                 </div>
                             </div>
+							<?php }else{ ?>
+								<button type="submit" class="drop-btn">Submit</button>
+							<?php } ?>
+                            
                         </div>
                     </div>
                 </div>
