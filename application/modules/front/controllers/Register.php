@@ -54,11 +54,6 @@ class Register extends MY_Controller
     // create a new user
 	public function add_user()
     {
-        if($_POST['signIn']){ echo "signIn"; }
-        if($_POST['signUp']){ echo "signUn"; }
-            
-            die;
-            
         $this->form_validation->set_rules('first_name', 'First name','trim|required');
         $this->form_validation->set_rules('last_name', 'Last name','trim|required');
         //$this->form_validation->set_rules('username','Username','trim|required|is_unique[users.username]');
