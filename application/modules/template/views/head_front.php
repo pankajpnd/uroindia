@@ -28,4 +28,6 @@
         <title>Medsev - Medical & Healthcare HTML Template</title>
 
         <link rel="icon" type="image/png" href="<?php bs() ?>assets/img/favicon.png">
+        <script src="<?php bs() ?>assets/js/jquery-1.12.4.min.js"></script>
+        <script src="<?php bs() ?>assets/js/bootstrap.min.js"></script>
     </head>

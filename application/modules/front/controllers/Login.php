@@ -96,7 +96,7 @@ class Login extends MY_Controller
 					if($send) 
 					{
 						$msg = "Please Check Your Email to Verify your Account";
-						$this->session->set_flashdata('success',$msg);
+						$this->session->set_flashdata('error',$msg);
 						redirect('users/Auth/authentication','refresh');
 					}
 					else
@@ -136,7 +136,7 @@ class Login extends MY_Controller
 				// if the login was un-successful
 				// redirect them back to the login page
 				
-				$this->session->set_flashdata('message', $this->ion_auth->errors());
+				$this->session->set_flashdata('error', $this->ion_auth->errors());
 				redirect('front/login', 'refresh'); // use redirects instead of loading views for compatibility with MY_Controller libraries
 			}
 		}
@@ -144,7 +144,7 @@ class Login extends MY_Controller
 		{
 			// the user is not logging in so display the login page
 			// set the flash data error message if there is one
-			$data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+			$data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('error');
 
 			$data['identity'] = array('name' => 'identity',
 				'id'    => 'identity',

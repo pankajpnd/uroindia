@@ -45,7 +45,7 @@
                                     <i class="icofont-doctor"></i>
                                     For Doctor
                                 </li>
-                                <li style="cursor:pointer" onclick="window.location.href = '<?= base_url('front/Login') ?>'">
+                                <li style="cursor:pointer" onclick="window.location.href = '<?= base_url('front/DoctorProfile/jobpost') ?>'">
                                     <i class="icofont-businessman"></i>
                                     Post Job
                                 </li>
@@ -135,3 +135,21 @@
         </div>
     </div>
     <!-- End Navbar Area -->
+    <?php if(!empty($error)){?>    
+    <center><div style="display: none;" class="alert alert-danger" role="alert">
+            <button class="close" data-dismiss="alert"></button>  
+            <span class="error_msg"><?php echo $error;?></span>
+    </div></center>
+    <?php } ?> 
+    <?php if(!empty($message)){?>    
+    <center><div style="display: none;" class="alert alert-success" role="alert">
+            <button class="close" data-dismiss="alert"></button>  
+            <span class="error_msg"><?php echo $message;?></span>
+    </div></center>
+    <?php } ?> 
+<script>
+    $(document).ready(function(){
+        $('.alert').delay(1000).fadeIn(500);
+        $('.alert').delay(5000).fadeOut(1000);
+    });
+</script>

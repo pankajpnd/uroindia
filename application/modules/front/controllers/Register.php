@@ -261,7 +261,7 @@ class Register extends MY_Controller
     
     
     
-	public function register_doctor(){        
+    public function register_doctor(){        
         
         $dob_day        =   sprintf("%02d",$this->input->post('reg_dob_day'));
         $dob_month      =   sprintf("%02d",$this->input->post('reg_dob_month'));

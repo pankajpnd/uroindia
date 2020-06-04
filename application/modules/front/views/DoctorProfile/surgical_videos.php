@@ -73,16 +73,19 @@
                     <div class="col-lg-3">
                         <div class="blog-details-item">
                         <div class="blog-details-category ptb-10">
-                                <h3>Register</h3>
+                            <h4>&nbsp;</h4>
                                 <ul>
                                     <li>
-                                        <a href="<?= base_url('front/Hospital') ?>">Hospital Registration</a>
+                                        <a href="<?= base_url('front/DoctorProfile/patient_queries') ?>">Patient Queries</a>
                                     </li>
                                     <li>
-                                        <a href="<?= base_url('front/Register/doctors') ?>">Doctor's Registration</a>
+                                        <a href="<?= base_url('front/DoctorProfile/jobpost') ?>">Job Post</a>
                                     </li>
                                     <li>
-                                        <a href="<?= base_url('front/Register/consultant') ?>">Consultant Registration</a>
+                                        <a href="<?= base_url('front/DoctorProfile/surgicalvid') ?>">Surgical Videos</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?= base_url('front/DoctorProfile/doc_profile') ?>">Profile</a>
                                     </li>
                                 </ul>
                             </div>
