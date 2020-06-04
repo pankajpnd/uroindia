@@ -28,7 +28,7 @@
                         <div class="location-item">
                             <i class="icofont-location-pin"></i>
                             <h3>Location</h3>
-                            <p>2108-267 Road Quadra,Toronto, Victiria Canada</p>
+                            <p><?php echo @$address[0]->misc_title;?></p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-4">
@@ -36,8 +36,7 @@
                             <i class="icofont-ui-message"></i>
                             <h3>Email</h3>
                             <ul>
-                                <li>hello@medsev.com</li>
-                                <li>emailexample@name.com</li>
+                                <li><?php echo @$email[0]->misc_title;?></li>
                             </ul>
                         </div>
                     </div>
@@ -46,8 +45,7 @@
                             <i class="icofont-ui-call"></i>
                             <h3>Phone</h3>
                             <ul>
-                                <li>+07 5554 3332 322</li>
-                                <li>+07 5554 3332 322</li>
+                                <li>+91 <?php echo @$contact[0]->misc_title;?></li>
                             </ul>
                         </div>
                     </div>
