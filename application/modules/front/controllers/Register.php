@@ -251,7 +251,7 @@ class Register extends MY_Controller
 		
         $data['degree'] = $this->common_model->getAllData('mst_degree','*');
         $data['specialty'] = $this->common_model->getAllData('mst_specialty','*');
-        $data['states'] = $this->common_model->getAllData('mst_state','*');
+        $data['states'] = $this->common_model->getAllData('mst_state','*','','','state_name');
         $data['page'] = "front/doctors";
         
 		$this->template->template_front($data);
@@ -319,7 +319,7 @@ class Register extends MY_Controller
                 );
 
                 if($this->ion_auth->register($username,$password,$email,$additional_data,$group)){
-                    $msg = "Doctor Added Successfully";
+                    $msg = "Registeration Successfull";
                     $this->session->set_flashdata('success',$msg);
                     header("Location: {$_SERVER["HTTP_REFERER"]}");
                 }else{
