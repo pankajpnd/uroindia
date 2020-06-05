@@ -10,7 +10,16 @@
                                     <a href="#">Log In</a>
                                 </p>
                             </div>
-                            <div class="signup-form">
+							<?php if($this->session->flashdata('success')){ ?>
+							<div class="row" style="background-color:#7ff387;border-radius:5px">
+								<div class="col-lg-12">
+									<p style="padding:10px"><?php echo $this->session->flashdata('success');?></p>
+								</div>
+                            </div>
+								
+							<?php } ?>
+							
+                            <div class="signup-form mt-20">
                                 <form action="<?= base_url('front/register/register_doctor') ?>" method="post" enctype="multipart/form-data">
                                     
                                     <div class="row" style="background-color:#e7edf5">
@@ -37,7 +46,7 @@
                                                 <i class="icofont-ui"></i>
                                                 <label>Date of Birth</label>
                                                 <select name="reg_dob_day" class="form-control"  required>
-                                                    <option value="0" selected>Day</option>
+                                                    <option value="" selected>Day</option>
                                                     <?php for($i=1;$i<=31;$i++){?>
                                                     <option value="<?php echo $i;?>"><?php echo $i;?></option>
                                                     <?php } ?>
@@ -49,7 +58,7 @@
                                                 <i class="icofont-ui"></i>
                                                 <label>&nbsp;</label>
                                                 <select name="reg_dob_month" class="form-control"  required>
-                                                    <option value="0" selected>Month</option>
+                                                    <option value="" selected>Month</option>
                                                     <?php for($i=1;$i<=12;$i++){?>
                                                     <option value="<?php echo $i;?>"><?php echo $i;?></option>
                                                     <?php } ?>
@@ -61,7 +70,7 @@
                                                 <i class="icofont-ui"></i>
                                                 <label>&nbsp;</label>
                                                 <select name="reg_dob_year" class="form-control"  required>
-                                                    <option value="0" selected>Year</option>
+                                                    <option value="" selected>Year</option>
                                                     <?php for($i=1960;$i<=date('Y');$i++){ ?>
                                                     <option value="<?php echo $i;?>"><?php echo $i;?></option>
                                                     <?php } ?>
@@ -115,7 +124,7 @@
                                         <div class="col-lg-4">
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
-                                                <label>Year</label>
+                                                <label>Year of Degree Completion</label>
                                                 <input type="number" name="reg_year" class="form-control" placeholder="Enter Year" required>
                                             </div>
                                         </div>
@@ -142,8 +151,11 @@
                                             <div class="form-group">
                                                 <i class="icofont-ui"></i>
                                                 <label>Working</label>
-                                                <select name="reg_workin" class="form-control"  >
+                                                <select name="reg_workin" class="form-control" >
                                                     <option value="">Select Working</option>
+                                                    <option value="Hospital">Hospital</option>
+                                                    <option value="Clinic">Clinic</option>
+                                                    <option value="Nursing Home">Nursing Home</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -239,7 +251,7 @@
                                         <div class="row">
                                         <div class="col-lg-12">
                                             <div class="form-group" style="margin-left:15px">
-                                            <input type="checkbox" /> I agree to the Terms of Use and Privacy Policy.
+                                            <input type="checkbox" required /> I agree to the Terms of Use and Privacy Policy.
                                             </div>
                                         </div>
                                         </div>
@@ -345,7 +357,7 @@
             type:'post',
             dataType:'json',
             success:function(res){
-                var content = "";
+                var content = "<option value=''>Select City</option>";
                 $.each(res, function(k, v){
                     content += "<option value='"+ v.city_id +"'>"+ v.city_name +"</option>";
                 });

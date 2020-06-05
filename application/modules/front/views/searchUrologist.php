@@ -61,8 +61,16 @@
                             <div class="doctor-search-item">
                                 <div class="form-group">
                                     <i class="icofont-hospital"></i>
-                                    <label>Clinic Name</label>
-                                    <input type="text" class="form-control" name="clinic" id="clinic" onkeyup="formSearchDoctor()" placeholder="Clinic Name">
+                                    <label>Sub Speciality</label>
+                                    <select name="city" id="city" class="form-control" onchange="formSearchDoctor()" required>
+                                        <option value="">Select Speciality</option>
+                                        <option value="">Infertility</option>
+                                        <option value="">Sexual Wellness</option>
+                                        <option value="">Female Urology</option>
+                                        <option value="">Kidney Transplant</option>
+                                        <option value="">Paediatric Urology</option>
+                                        <option value="">Laparoscopic / Robotic Urology</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>

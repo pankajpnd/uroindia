@@ -10,6 +10,15 @@
                                     <a href="#">Log In</a>
                                 </p>
                             </div>
+							<?php if($this->session->flashdata('success')){ ?>
+							<div class="row" style="background-color:#7ff387;border-radius:5px">
+								<div class="col-lg-12">
+									<p style="padding:10px"><?php echo $this->session->flashdata('success');?></p>
+								</div>
+                            </div>
+								
+							<?php } ?>
+							
                             <div class="signup-form">
                                 <form action="<?= base_url('front/hospital/register_hospital') ?>" method="post" enctype="multipart/form-data">
                                     <div class="row" style="background-color:#e7edf5">

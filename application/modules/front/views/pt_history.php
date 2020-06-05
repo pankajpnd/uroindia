@@ -5,7 +5,7 @@
                     <div class="col-lg-12 ptb-10">
                         <div class="signup-item" style="max-width:99%;">
                             <div class="signup-head">
-                                <h2>Patient Medical History</h2>
+                                <h3>Patient Medical History</h3>
                                 <?php foreach ($check as $value){} ?>
                             </div>
                             <div class="signup-form">
@@ -23,7 +23,7 @@
                                                 <div class="form-group">
                                                     <i class="icofont-ui-building"></i>
                                                     <label>Treatment Taken</label>
-                                                    <textarea rows="3" name="mhis_treat" class="form-control" placeholder="Enter Which Treatment Yoau have Taken" ></textarea>
+                                                    <textarea rows="3" name="mhis_treat" class="form-control" placeholder="Enter Which Treatment You have Taken" ></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
@@ -35,7 +35,7 @@
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="text-center">
-                                                    <button type="submit" class="btn signup-btn">Get Appointment</button>
+                                                    <button type="submit" class="btn signup-btn">Submit and Pay</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -44,7 +44,7 @@
                                         <form action="<?= base_url('front/register/update_patient_history') ?>" method="post">
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <h4>Patient Urology Reports</h4><hr>
+                                                    <h4>Upload Reports</h4><hr>
                                                 </div>
                                                 <div class="col-lg-4">
                                                     <div class="form-group">
