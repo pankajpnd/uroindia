@@ -76,7 +76,7 @@ class Register extends MY_Controller
             $email          = $this->input->post('email');
             $phone          = $this->input->post('phone');
             $password       = $this->input->post('password');
-            $gp             = 02;//$this->input->post('group');
+            $gp             = 05;//$this->input->post('group');
             $age            = $this->input->post('age');
             $gender         = $this->input->post('gender');
             $state          = $this->input->post('state');
@@ -279,7 +279,7 @@ class Register extends MY_Controller
             $email      = $this->input->post('reg_email');
             $phone      = $this->input->post('reg_mob');
             $password   = $this->input->post('password');
-            $gp         = 02;//$this->input->post('group');
+            $gp         = 03;//$this->input->post('group');
             $state      = $this->input->post('reg_state');
             $city       = $this->input->post('reg_city');
             

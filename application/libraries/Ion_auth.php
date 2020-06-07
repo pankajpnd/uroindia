@@ -391,6 +391,15 @@ class Ion_auth
 	 * @return bool Whether the user is an administrator
 	 * @author Ben Edmunds
 	 */
+	public function is_superadmin($id = FALSE)
+	{
+		$this->ion_auth_model->trigger_events('is_superadmin');
+
+		$admin_group = $this->config->item('superadmin_group', 'ion_auth');
+
+		return $this->ion_auth_model->in_group($admin_group, $id);
+	}
+        
 	public function is_admin($id = FALSE)
 	{
 		$this->ion_auth_model->trigger_events('is_admin');

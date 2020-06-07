@@ -112,6 +112,8 @@ class Login extends MY_Controller
                                         $user_type = $this->session->userdata('user_type');
 					if ($this->ion_auth->is_admin()){
                                             redirect('dashboard/', 'refresh');
+                                        }else if ($this->ion_auth->is_superadmin()){
+                                            echo 'hello this is superadmin';die;
 					}else if($user_type==2){
                                             redirect('dashboard/', 'refresh');
 					}else if($user_type==3){

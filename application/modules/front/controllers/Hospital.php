@@ -55,7 +55,7 @@ class Hospital extends MY_Controller
             $email      = $this->input->post('hosp_hemail');
             $phone      = $this->input->post('hosp_hmob');
             $password   = $this->input->post('password');
-            $gp         = 02;//$this->input->post('group');
+            $gp         = 04;//$this->input->post('group');
             $state      = $this->input->post('hosp_state');
             $city       = $this->input->post('hosp_city');
             
