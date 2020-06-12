@@ -103,6 +103,7 @@ class Register extends MY_Controller
                     if(!empty($this->input->post('health_query'))){
                         $pat_query_data['qry_user_id']   = $this->session->userdata('user_id');
                         $pat_query_data['qry_desc'] = $this->input->post('health_query');
+                        $pat_query_data['qry_title'] = $this->input->post('query_title');
                         $pat_query_data['qry_entrydt'] = date("Y-m-d H:i:s");
                         $this->common_model->InsertData('patients_queries',$pat_query_data); 
                      }           
@@ -237,13 +238,71 @@ class Register extends MY_Controller
 	{
         if ($this->ion_auth->logged_in()){
             $uid = $this->session->userdata('user_id');
-            $data['check'] = $this->common_model->getAllData('patients_queries','*','','qry_user_id='.$uid);
+            $data['check'] = $this->common_model->getAllData('patients_queries','*','','qry_user_id='.$uid,'qry_id desc');
             $data['page'] = "front/pt_history";
             $this->template->template_front($data);
         }else{
             redirect('front/login', 'refresh');
         }
 
+    }
+
+
+	public function update_patient_history()
+	{
+			// $this->form_validation->set_rules('title', 'Post Title','trim|required');
+			// $this->form_validation->set_rules('category', 'Category','trim|required');
+			// $this->form_validation->set_rules('meta_desc', 'Meta Description','trim|required');
+			// $this->form_validation->set_rules('meta_keyword', 'Meta Keywords','trim|required');
+			// $this->form_validation->set_rules('tags[]', 'Tags','trim|required');
+			// $this->form_validation->set_rules('content', 'Content','trim|required');
+			
+			// if ($this->form_validation->run() == FALSE) 
+			// {
+				// $this->index();
+			// } 
+			// else
+			// {
+				// if (!empty($_FILES["img"]["name"]))
+				// {
+					// $config['upload_path']          = './uploads/blog_images/';
+		            // $config['allowed_types']        = 'gif|jpg|png';
+		            
+
+		            // $this->load->library('upload', $config);
+
+		            // if (!$this->upload->do_upload('img'))
+		            // {
+		                // $error = array('error' => $this->upload->display_errors());
+
+		                // $msg = $error['error'];
+				        // $this->session->set_flashdata('error',$msg);
+				        // redirect('blog/posts','refresh');
+		            // }
+		            // else
+		            // {
+		                // $data = array('upload_data' => $this->upload->data());
+		                // $image = base_url().'uploads/blog_images/'.$data['upload_data']['file_name'];
+		            // }
+				// } 
+				// else 
+				// {
+					// $image = post('old_img');
+				// }
+
+				$data = array(
+								'qry_symptoms'			=> post('mhis_sympt'), 
+								'qry_treatment_taken'	=> post('mhis_treat'), 
+								'qry_desc' 	  			=> post('mhis_query'),
+								'updated_at'   	  		=> date("Y-m-d H:i:s"),
+								'qry_status'   	  		=> 2,
+							 );
+
+				$this->common_model->UpdateDB('patients_queries',array('qry_id' => post('qry_id')),$data);
+
+				set_flashdata('success','Query Posted Successfully </br> Doctor will revert back to you soon');
+				redirect('front/register/med_history','refresh');
+			//}
     }
 
     

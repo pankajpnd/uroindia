@@ -112,8 +112,8 @@ class Login extends MY_Controller
                                         $user_type = $this->session->userdata('user_type');
 					if ($this->ion_auth->is_admin()){
                                             redirect('dashboard/', 'refresh');
-                                        }else if ($this->ion_auth->is_superadmin()){
-                                            echo 'hello this is superadmin';die;
+					}else if ($this->ion_auth->is_superadmin()){
+											echo 'hello this is superadmin';die;
 					}else if($user_type==2){
                                             redirect('dashboard/', 'refresh');
 					}else if($user_type==3){
@@ -124,6 +124,7 @@ class Login extends MY_Controller
                                             if(!empty($this->input->post('health_query'))){
                                                $pat_query_data['qry_user_id']   = $this->session->userdata('user_id');
                                                $pat_query_data['qry_desc'] = $this->input->post('health_query');
+                                               $pat_query_data['qry_title'] = $this->input->post('query_title');
                                                $pat_query_data['qry_entrydt'] = date("Y-m-d H:i:s");
                                                $this->common_model->InsertData('patients_queries',$pat_query_data); 
                                             }
