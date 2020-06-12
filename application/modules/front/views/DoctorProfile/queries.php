@@ -18,14 +18,18 @@
                                     </thead>
                                     <tbody>
                                         <?php $c =0; foreach ($queries as $query) { $c++; 
-                                        $patient = $this->common_model->get_by_multiple_con_single('users', array('id='=>$query->qry_user_id));
+                                        
+										$patient_query = $this->common_model->get_by_multiple_con_single('patients_queries', array('qry_id='=>$query->pat_query_id));
+										
+										$patient_details = $this->common_model->get_by_multiple_con_single('users', array('id='=>$patient_query->qry_user_id,"first_name,last_name"));
+										// print_r($patient);
                                         ?>
                                         <tr>
                                             <td><?php echo $c; ?></td>                                             
-                                            <td><?php echo $patient->first_name; ?></td>                                             
-                                            <td><?php echo $query->qry_desc; ?></td>                                             
-                                            <td><?php echo $query->qry_entrydt; ?></td>                                             
-                                            <td></td>                                             
+                                            <td><?php echo $patient_details->first_name." ".$patient_details->last_name; ?></td>
+                                            <td><?php echo $patient_query->qry_desc; ?></td>                                             
+                                            <td><?php echo $patient_query->qry_entrydt; ?></td>                                             
+                                            <td><button style="border-radius: 30px; background-color: #0046c0;color:#fff;border:none;">Reply</button></td>                                             
                                         </tr>
                                         <?php } ?>
                                     </tbody>

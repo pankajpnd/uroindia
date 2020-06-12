@@ -108,7 +108,7 @@ class DoctorProfile extends MY_Controller
 	public function patient_queries(){
             if ($this->ion_auth->logged_in() && $this->session->userdata('user_type')==3){                
                 $doc_id = $this->session->userdata('parent_id');
-                $data['queries'] = $this->common_model->getAllData('patients_queries','*');//,'','qry_user_id='.$doc_id
+                $data['queries'] = $this->common_model->getAllData('doctors_queries','*','','dq_doc_id='.$doc_id);
                 $data['page'] = "front/DoctorProfile/queries";
                 $this->template->template_front($data);                
             }else{

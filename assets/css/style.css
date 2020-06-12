@@ -85,6 +85,14 @@ img {
   height: 100%;
 }
 
+.hide {
+  display:none;
+}
+
+.show {
+  display:block;
+}
+
 .d-table-cell {
   vertical-align: middle;
 }
@@ -93,8 +101,24 @@ img {
   margin-top: 20px;
 }
 
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
 .mr-20 {
   margin-top: 20px;
+}
+
+.p-0 {
+  padding: 0px;
+}
+
+.m-0 {
+  margin: 0px;
 }
 
 .ptb-100 {

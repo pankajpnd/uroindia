@@ -27,6 +27,36 @@ class Common_model extends CI_Model
 			}
 			return @$value->$returnfield;
 		}
+	public function find_query_all($sql_query)
+	{
+	$safe_sql=$this->db->query($sql_query);
+	return $safe_sql->result_array();
+	}	
+
+	// function FillDynamicCombo2($query,$datafield,$textfield,$selectvalue)  {
+		
+		// $rs =$this->find_query_all($query);
+		// $i=1;
+		// $selectvalue1="";
+				// if(count($rs)>0){
+		// foreach($rs as $row){
+		 // if($i==1)
+		 // $selectvalue1=$row->$datafield;
+		 
+		 // if($selectvalue==$row->$datafield){
+		 // echo'<option value="'.$row->$datafield.'" selected>'.$row->$textfield.'</option>';
+		 // $selectvalue1=$selectvalue;
+		// }
+		 // else {
+		// echo'<option value="'.$row->$datafield.'">'.$row->$textfield.'</option>';
+		  // }
+		  // $i++;
+		  // }
+		// }
+		  // return $selectvalue1;
+	// }
+	
+	
 	public function add($table,$data)
 	{
 		$query = $this->db->insert($table,$data);
@@ -119,23 +149,23 @@ class Common_model extends CI_Model
 		endif;	
 	}
         
-        public function get_by_multiple_con_single($table, $array, $returnfield='')
-		{
-                        if (!empty($returnfield)){
-                                $this->db->select($returnfield);
-                        }else{
-                                $this->db->select('*');
-                        }
-			$this->db->select($returnfield);
-			$this->db->from($table);
-			$this->db->where($array);
-			$query = $this->db->get();
-                        if (!empty($returnfield)){
-                            foreach ($query->result() as $value) {}
-                            return @$value->$returnfield;
-                        }else{
-                               return $query->row();
-                        }
-		}
+    public function get_by_multiple_con_single($table, $array, $returnfield=''){
+        if (!empty($returnfield)){
+            $this->db->select($returnfield);
+        }else{
+            $this->db->select('*');
+        }
+		// $this->db->select($returnfield);
+		$this->db->from($table);
+		$this->db->where($array);
+		$query = $this->db->get();
+		
+        if (!empty($returnfield)){
+            foreach ($query->result() as $value) {}
+            return @$value->$returnfield;
+        }else{
+            return $query->row();
+        }
+	}
                 
 }

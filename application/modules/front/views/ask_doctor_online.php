@@ -7,6 +7,17 @@
                     <div class="drop-left">
                         <h2>Enter Your Health Query.</h2>
                         <div class="row">
+							<div class="col-lg-6">
+                                <div class="form-group">
+								
+                                    <select class="form-control" name="query_about" id="query_about" onchange="FillQueryAbout(this.value)" required>
+                                        <option value="">Query Regarding</option>
+										<option value="Urological Problems">Urological Problems</option>
+                                        <option value="Infertility">Infertility</option>
+                                        <option value="Sexual Wellness">Sexual Wellness</option>
+                                    </select>
+                                </div>
+                            </div> 
                             <div class="col-md-12 col-lg-12">
                                 <div class="form-group">
                                     <textarea name="message" class="form-control" id="message" onkeyup="FillMsg(this.value)" cols="30" rows="5" required data-error="Write your Health Query, your age, height, weight, medicine your are taking." placeholder="Enter Your Health Query here..."></textarea>
@@ -14,7 +25,7 @@
                                 </div>
                             </div>
                             <?php if (!$this->ion_auth->logged_in()) { ?>
-                                <div class="col-md-12 col-lg-12" style="background-color:#e7edf5;padding:10px">
+                                <div class="col-md-12 col-lg-12" style="background-color:#e7edf5;padding:10px;margin: 15px;">
                                     <button type="" class="drop-btn" onclick="OpenForm('signUp_form', 'signIn_form')">New User</button>
                                     <button type="" class="drop-btn" onclick="OpenForm('signIn_form', 'signUp_form')">Existing User?</button>
                                     <div class="col-md-12 col-lg-12">
@@ -30,7 +41,8 @@
                                                                 <i class="icofont-ui-user"></i>
                                                                 <label>Email / Username</label>
                                                                 <input type="email" class="form-control" id="identity" name="identity" placeholder="Your Email">
-                                                                <textarea name="health_query" class="form-control query_message" hidden></textarea>
+                                                                <textarea name="query_title" class="form-control query_title" hidden></textarea>
+																<textarea name="health_query" class="form-control query_message" hidden></textarea>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
@@ -80,6 +92,7 @@
                                                                 <i class="icofont-business-man-alt-1"></i>
                                                                 <label>First Name</label>
                                                                 <input type="text" name="first_name" class="form-control" placeholder="Enter Your First Name" required>
+                                                                <textarea name="query_title" class="form-control query_title" hidden></textarea>
                                                                 <textarea name="health_query" class="form-control query_message" hidden></textarea>
                                                             </div>
                                                         </div>                                
@@ -171,7 +184,13 @@
                                     </div>
                                 </div>
                             <?php } else { ?>
-                            <button type="button" class="drop-btn" onclick="SaveQuery()">Submit</button>
+							<div class="row">
+                                <div class="col-lg-12" style="margin:8px">
+                                    <div class="text-center">
+                                        <button type="button" class="drop-btn" onclick="SaveQuery()">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
                             <?php } ?>
 
                         </div>
@@ -196,6 +215,11 @@
 
     function FillMsg(mval) {
         $('.query_message').html(mval);
+    }
+
+
+    function FillQueryAbout(qval) {
+        $('.query_title').val(qval);
     }
 
 
